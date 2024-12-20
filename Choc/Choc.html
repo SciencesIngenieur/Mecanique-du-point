@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chocs élastiques</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+    
+      <h1>Chocs élastiques</h1>
+
+      <h2>Lois de conservation</h2>
+      
+      <h3>Définition</h3>
+      
+      <div>
+        On dit qu’il y a collision ou choc entre deux ou plusieurs particules quand ces objets
+        subissent une interaction mutuelle de courte durée et de courte portée. Le choc est localisé
+        dans le temps et l’espace. En règle générale, les forces d’interaction sont négligeables
+        quand les particules sont suffisamment éloignées. On peut donc distinguer un <q>avant</q> et
+        un <q>après</q> la collision.
+      </div>
+      
+      <figure>
+        <img src="collision.png">
+        <figcaption>Choc.</figcaption>
+      </figure>
+
+      <div>
+        Ainsi, avant et après la collision, les particules se déplacent en ligne droite avec des
+        vitesses uniformes. On notera \(\overrightarrow{v_i}\) la vitesse d’une particule avant le
+        choc et \(\overrightarrow{v_i}'\) celle après. La problématique est la suivante&#x202f;:
+        compte tenu de la mesure des vitesses \(\overrightarrow{v_i}\), peut-on déduire quelques
+        informations sur les vitesses \(\overrightarrow{v_i}'\) malgré l’absence de détails
+        concernant l’interaction lors du choc&#x202f;? Réciproquement, quelle information nous
+        apporte la mesure des vitesses finales \(\overrightarrow{v_i}'\)&#x202f;?
+      </div>
+      
+      <h3>Grandeurs conservées</h3>
+      
+      <div>
+        Malgré notre connaissance partielle du problème, on peut obtenir certaines informations
+        grâce aux lois de conservation ou de symétrie.<br />
+        Désignons par \(\mathcal{S}\) le système mécanique formé par l’ensemble des particules. On
+        considère ce système isolé de l’extérieur (\(\overrightarrow{F^{ext}}=\overrightarrow{0}\)).
+        Enfin, l’analyse est effectuée dans un référentiel galiléen.
+      </div>
+      
+      <h4>Conservation de la quantité de mouvement du système</h4>
+      
+      <div>
+        D’après le théorème du centre d’inertie on a&#x202f;:
+        $$
+          \quad \frac{\mathrm{d}\overrightarrow{p_{\mathcal{S}}}}{\mathrm{d}t}
+            = \overrightarrow{F^{ext}}=\overrightarrow{0}
+        $$
+        La quantité de mouvement du système se conserve donc.
+        $$
+          \quad \boxed{
+            \overrightarrow{p_{\mathcal{S}}}^{avant} = \overrightarrow{p_{\mathcal{S}}}^{après} }
+        $$
+      </div>
+      
+      <h4>Conservation de l’énergie</h4>
+      
+      <div>
+        Si les forces d’interaction dérivent d’une énergie potentielle d’interaction
+        \(\mathcal{E}_p^{int}\), alors l’énergie totale du système s’écrit&#x202f;:
+        $$
+          \quad \mathcal{E} = \mathcal{E}_c(\mathcal{S}) + \mathcal{E}_p^{int}(\mathcal{S})
+            + \sum_{particules} U_i
+        $$
+        où&#x202f;:
+        <ul>
+          <li>\(\mathcal{E}_c(\mathcal{S})\) représente l’énergie cinétique macroscopique du
+          système</li>
+          <li>\(\mathcal{E}_p^{int}(\mathcal{S})\) représente l’énergie d’interaction entre les
+          particules</li>
+          <li>\(U_i\) représente l’énergie interne de chaque particule</li>
+        </ul>
+      </div>
+      
+      <div>
+        Le système étant isolé de l’extérieur, l’énergie totale se conserve. De plus, avant et après
+        le choc, on considère que les particules n’interagissent pas entre elles. On peut donc
+        écrire, si l’on note \(N_1\) le nombre de particules avant le choc et \(N_2\) celui après le
+        choc&#x202f;:
+        $$
+          \quad \boxed{
+            \left[ \mathcal{E}_c(\mathcal{S}) + \sum_{i=1}^{N_1} U_i \right]^{avant}
+              = \left[ \mathcal{E}_c(\mathcal{S}) + \sum_{i=1}^{N_2} U_i \right]^{après}
+          }
+        $$
+      </div>
+      
+      <div>
+        Dans la suite on se limite aux collisions mobilisant seulement deux points matériels.
+      </div>
+      
+      <h2>Collisions élastiques</h2>
+      
+      <h3>Définition</h3>
+      
+      <div>
+        On dit qu’il y a collision élastique lorsque le nombre de particules reste constant et que
+        l’énergie interne de chaque particule reste inchangée avant et après le choc. En d’autres
+        termes, les particules ne se déforment pas ni ne changent de nature. Les lois de
+        conservation sont donc&#x202f;:
+        $$
+          \quad \boxed{ \begin{aligned}
+            & m_i = m_i' \\
+            & \overrightarrow{p_{\mathcal{S}}}^{avant} = \overrightarrow{p_{\mathcal{S}}}^{après} \\
+            & \mathcal{E}_c(\mathcal{S})^{avant} = \mathcal{E}_c(\mathcal{S})^{après}
+          \end{aligned} }
+        $$
+      </div>
+      
+      <div>
+        Citons quelques exemples&#x202f;:
+        <ul>
+          <li>collision entre boules de pétanque (boules dures indéformables)</li>
+          <li>diffusion de Rutherford (diffusion d’un noyau \({^{4}_{2}}\mathrm{He}^{2+}\) par un
+          noyau positif)</li>
+        </ul>
+      </div>
+      
+      <h3>Collision unidimensionnelle</h3>
+      
+      <div>
+        Traitons l’exemple d’une collision frontale élastique entre deux corps assimilables à deux
+        points matériels. Notons \(\overrightarrow{v_1}\), \(\overrightarrow{v_2}\) les vitesses
+        avant le choc et \(\overrightarrow{v_1}'\), \(\overrightarrow{v_2}'\) les vitesses après le
+        choc. On se place dans le cas où toutes les vitesses sont colinéaires. Le problème est donc
+        à une dimension et présente deux inconnues (\(\overrightarrow{v_1}'\) et
+        \(\overrightarrow{v_2}'\)). Ainsi, les deux lois de conservation devraient suffire à décrire
+        complètement le système après le choc.
+      </div>
+      
+      <figure>
+        <img src="collision_unidirectionnelle.png">
+        <figcaption>Collision unidirectionnelle.</figcaption>
+      </figure>
+      
+      <div>
+        Écrivons les deux relations de conservation (conservation de la quantité de mouvement et de
+        l’énergie cinétique)&#x202f;:
+        $$
+          \quad \left\{ \begin{aligned} 
+            m_1v_1 + m_2v_2 & = m_1v_1'+m_2v_2' \\
+            m_1{v_1}^2 + m_2{v_2}^2 & = m_1{v_1'}^2 + m_2{v_2'}^2
+          \end{aligned} \right. 
+        $$
+        où les vitesses \({v_i}\) et \({v_i}'\) sont des vitesses algébriques. Cela donne &#x202f;:
+        $$
+          \quad  \left\{ \begin{aligned} 
+            m_1\left(v_1' - v_1\right) & = m_2\left(v_2 - v_2'\right) \\
+           m_1\left({v_1'}^2 - {v_1}^2\right) & = m_2\left({v_2}^2 - {v_2'}^2\right)
+          \end{aligned} \right. 
+        $$
+      </div>
+      
+      <div>
+        En divisant la deuxième relation par la première on obtient \(v_1'+v_1=v_2'+v_2\) et, par
+        substitution, on trouve les vitesses finales en fonction des vitesses initiales&#x202f;:
+        $$
+          \quad \begin{aligned}
+            & v_1' = \frac{2m_2v_2 + (m_1-m_2)v_1}{m_1+m_2} \\
+            & v_2' = \frac{(m_2-m_1)v_2 + 2m_1v_1}{m_1+m_2}
+          \end{aligned}
+        $$
+        Notons la symétrie de la solution&#x202f;; il y a invariance par échange des indices \(1\)
+        et \(2\).
+      </div>
+      
+      <div>
+        Intéressons-nous au cas où la cible est immobile. Dans ce cas, \(v_2=0\) d’où&#x202f;:
+        $$
+          \quad \begin{aligned}
+            & v_1' = \frac{m_1-m_2}{m_1+m_2}v_1 \\
+            & v_2' = \frac{2m_1}{m_1+m_2}v_1
+          \end{aligned}
+        $$
+      </div>
+      
+      <div>
+        On note que si la cible est plus lourde que le projectile, ce dernier rebondit en changeant
+        de sens (\(v_1' \lt 0\)).<br />
+        Dans tous les cas, la vitesse du projectile diminue en valeur absolue. On peut vérifier que
+        l’énergie cinétique perdue par le projectile vaut&#x202f;:
+        $$
+          \quad Q = \mathcal{E'}_{c1} - \mathcal{E}_{c1}
+            = \frac{4m_1m_2}{(m_1+m_2)^2}\mathcal{E}_{c1}
+        $$
+      </div>
+      
+      <div>
+        Voyons maintenant quelques cas particuliers.<br />
+        <ol>
+          <li>Si le projectile est beaucoup plus léger que la cible (\(m_1 \ll m_2\))
+            on a&#x202f;:
+            $$
+              \quad \left\{  \begin{aligned}
+                & {v_1}' \simeq -v_1 \\
+                & {v_2}' \simeq 0
+              \end{aligned} \right.
+            $$
+            Il y a rebond avec inversion du sens de la vitesse. Ayant une grande inertie, la cible
+            ne bouge pas. C’est ce que l’on obtient lorsqu’on laisse tomber une boule indéformable
+            par terre sur un sol parfaitement rigide.
+          </li>
+          <li>À l’inverse, si le projectile est beaucoup plus lourd que la cible (\(m_1 \gg m_2\))
+            on obtient&#x202f;:
+            $$
+              \quad \left\{  \begin{aligned}
+                & {v_1}' \simeq v_1 \\
+                & {v_2}' \simeq 2v_1
+              \end{aligned} \right.
+            $$
+            C’est ce qui se passe quand on tape dans une balle avec une raquette par exemple.
+          </li>
+          <li>
+            Si projectile et cible ont même masse, on obtient&#x202f;:
+            $$
+              \quad \left\{  \begin{aligned}
+                & {v_1}' = 0 \\
+                & {v_2}' = v_1
+              \end{aligned} \right.
+            $$
+            Il y a échange des vitesses. C’est ce phénomène qui est à l’origine des oscillations du
+            pendule de Newton par exemple.
+            <figure>
+              <img src="pendule_Newton.png">
+              <figcaption>Pendule de Newton.</figcaption>
+            </figure>
+          </li>
+        </ol>
+      </div>
+      
+      <h3>Collision à 3 dimensions</h3>
+      
+      <div>
+        Considérons la collision élastique entre un point matériel de masse \(m_1\) animé d’une
+        vitesse \(\overrightarrow{v_1}\) et un point matériel de masse \(m_2\) initialement au
+        repos.<br />
+        Les lois de conservation donnent&#x202f;:
+        $$
+          \quad \left\{  \begin{aligned}
+            m_1\overrightarrow{v_1} & = m_1\overrightarrow{v_1}' + m_2\overrightarrow{v_2}' \\
+            m_1{v_1}^2 & = m_1{v_1'}^2 + m_2{v_2'}^2
+          \end{aligned} \right.
+        $$
+        Ce système présente quatre équations scalaires pour six inconnues (\(\overrightarrow{v_1}'\)
+        et \(\overrightarrow{v_2}'\)). Il reste donc deux paramètres indéterminés si on se limite
+        aux lois de conservation.<br />
+        La première relation nous dit que le mouvement se fait dans un plan contenant
+        \(\overrightarrow{v_1}\). Il nous suffit d’un paramètre (un angle par exemple) pour fixer ce
+        plan. Ensuite si l’on connait la déviation entre les particules, alors les autres paramètres
+        sont accessibles. Notez que seule une étude complète faisant intervenir l’interaction permet
+        d’accéder à toutes les informations.
+      </div>
+      
+      <figure>
+        <img src="collision_3D.png">
+        <figcaption>Collision entre un projectile et une cible fixe.</figcaption>
+      </figure>
+            
+      <div>
+        On se place dans le cas où \(m_1=m_2\).<br />
+        Cette situation se rencontre par exemple au billard si l’on n’oublie les effets produits par
+        la rotation de la bille. Le système d’équations précédent donne&#x202f;:
+        $$
+          \quad \left\{  \begin{aligned}
+            \overrightarrow{v_1} & = \overrightarrow{v_1}' + \overrightarrow{v_2}' \\
+            {v_1}^2 & = {v_1'}^2 + {v_2'}^2
+          \end{aligned} \right.
+        $$
+      </div>
+      
+      <div>
+        Si on élève la première équation au carré, on trouve \({v_1}^2 = {v_1'}^2 + {v_2'}^2 
+        +2\overrightarrow{v_1}' \cdot \overrightarrow{v_2}' \). En la soustrayant à la deuxième,
+        on obtient&#x202f;:
+        $$
+          \quad \overrightarrow{v_1}' \cdot \overrightarrow{v_2}' = 0
+        $$
+        Les deux vecteurs vitesses forment un angle droit. Autrement dit, on a&#x202f;:
+        $$
+          \quad \theta_1 - \theta_2 = \pi/2
+        $$
+      </div>
+      
+      <div>
+        Continuons en multipliant la première relation par \(\overrightarrow{v_1}'\)&#x202f;:
+        $$
+          \quad \overrightarrow{v_1}' \cdot \overrightarrow{v_1}
+            = \overrightarrow{v_1}'^2 + \overrightarrow{v_1}' \cdot \overrightarrow{v_2}'
+            = \overrightarrow{v_1}'^2
+        $$
+        Soit
+        $$
+          \quad v_1v_1'\cos \theta_1 = v_1'^2 \quad \Rightarrow \quad v_1' = v_1\cos \theta_1
+        $$
+      </div>
+      
+      <div>
+        De la même façon, en multipliant la première relation par \(\overrightarrow{v_2}'\) on
+        obtient&#x202f;:
+        $$
+          \quad v_2' = v_1\cos \theta_2
+        $$
+      </div>
+      
+      <div>
+        En résumé on a&#x202f;:
+        $$
+          \quad \left\{  \begin{aligned}
+            v_1' = v_1\cos \theta_1 \\
+            v_2' = v_1\cos \theta_2 \\
+            \theta_1 - \theta_2 = \pi/2
+          \end{aligned} \right.
+        $$
+      </div>
+      
+      <div>
+        Par conséquent, si l’on connait \(\theta_1\) et \(v_1\) on peut calculer \(v_1'\), puis
+        \(\theta_2\) et \(v_2\).<br />
+        Dans le cas du billard, l’angle \(\theta_1\) ne dépend que d’une grandeur&#x202f;: le
+        paramètre d’impact \(b\). On montre que&#x202f;:
+        $$
+          \quad \cos \theta_1 = \frac{b}{2R}
+        $$
+        où \(R\) représente le rayon des billes.
+      </div>
+      
+      <figure>
+        <img src="parametre_impact.png">
+        <figcaption>Paramètre d’impact.</figcaption>
+      </figure>
+      
+      <div>
+        En <q>visée pleine bille</q>, \(b=0\) et \(\theta_2 = 0\). Dans ce cas, on obtient
+        \(v_1'=0\) et \(v_2'=v_1\)&#x202f;: on retrouve la collision directe de deux masses
+        identiques.
+      </div>
+      
+      <div>
+        En <q>visée demi-bille</q>, \(b=R/2\) d’où \(\theta_1 = 60°\), \(\theta_2 = -30°\), 
+        \(v_1'=v_1/2\) et \(v_2'=v_1\sqrt{3}/2\).
+      </div>
+      
+      <div>       
+        Dans le cas où la bille frôle la cible (on parle de <q>visée finesse</q>) on a
+        \(b \to 2R\), \(\theta_2 = 90°\) et \(v_2' \simeq 0\)&#x202f;: la cible est dévié de 90°
+        par rapport à la ligne de visée avec une vitesse cependant faible.
+      </div>
+
+    </section>
+  </body>
+</html>

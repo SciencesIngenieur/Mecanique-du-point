@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Oscillateur</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+    
+      <h1>Oscillateur</h1>
+
+      <h2>Oscillateur harmonique</h2>
+      
+      <h3>Pendule élastique non amorti</h3>
+      
+      <h4>Introduction</h4>
+      
+      <div>
+        Le pendule élastique est un système constitué d’un ressort de masse négligeable dont une
+        extrémité est fixée et auquel on a attaché une masse ponctuelle \(m\) libre de se mouvoir.
+        Le ressort a pour constante de raideur \(k\) et une longueur à vide \(\ell_0\). De plus,
+        nous supposons que la masse est astreinte à se déplacer suivant un axe horizontal sans
+        frottement. On a alors un système à un degré de liberté qui est amené à osciller comme nous
+        allons le démontrer.
+      </div>
+      
+      <h4>Équation du mouvement</h4>
+      
+      <div>
+        Dans le référentiel d’étude considéré galiléen, la force de pesanteur est compensée par la
+        réaction du support.<br />
+        La tension du ressort produit une force de rappel&#x202f;:
+        $$
+          \quad \overrightarrow{T} = - k (\ell - \ell_0) \overrightarrow{u_x}
+        $$
+        où \(\ell\) désigne la longueur du ressort.<br />
+        La position d’équilibre correspond donc à une longueur \(\ell_{eq}=\ell_0\). On désigne par
+        \(x=\ell-\ell_{eq}\) l’allongement du ressort par rapport à la situation au repos. Dans ce
+        cas, on a&#x202f;:
+        $$
+          \quad \overrightarrow{T} = - k x \overrightarrow{u_x}
+        $$
+      </div>
+      
+      <figure>
+        <img src="pendule_elastique.png">
+        <figcaption>Pendule élastique.</figcaption>
+      </figure>
+      
+      <div>
+        Le principe fondamental de la dynamique donne&#x202f;:
+        $$
+          \quad m\frac{\mathrm{d}^2x}{\mathrm{d}t^2} = -kx
+        $$
+      </div>
+      
+      <div>
+        On en déduit l’équation différentielle du mouvement&#x202f;:
+        $$
+          \quad \boxed{ \ddot{x} + {\omega_0}^2x = 0 \quad / \quad \omega_0 = \sqrt{\frac{k}{m}} }
+        $$
+        Il s’agit de l’équation caractéristique d’un oscillateur harmonique.
+      </div>
+      
+      <div>
+        Remarquons les propriétés suivantes&#x202f;:
+        <ol>
+          <li>L’équation du mouvement est invariante par la transformation \(t \mapsto -t\) qui
+            traduit la réversibilité du phénomène.</li>
+          <li>On note également une invariance par la transformation \(x \mapsto -x\) ce qui
+            signifie que les oscillations sont symétriques autour de la position d’équilibre.</li>
+          <li>L’analyse dimensionnelle de l’équation montre que \([\omega_0] = T^{-1}\)&#x202f;: il
+            existe donc une durée de l’ordre de \(1/\omega_0\) qui est caractéristique du phénomène
+            d’oscillation.</li>
+        </ul>
+      </div>
+      
+      <div>
+        La solution de l’équation différentielle s’écrit&#x202f;:
+        $$
+          \quad x(t) = A\cos\left( \omega_0 t + \varphi \right)
+        $$
+        Avec \(A\) et \(\varphi\), deux constantes d’intégration que l’on obtient grâce à deux
+        conditions initiales.
+      </div>
+      
+      <div>
+        Si on écarte le système de sa position d’équilibre \(x =0\), il se met à osciller avec une
+        amplitude \(A\) et à une fréquence, dite fréquence propre&#x202f;:
+        $$
+          \quad \boxed{ \nu_0 = \frac{\omega_0}{2\pi} = \frac{1}{2\pi}\sqrt{\frac{k}{m}} }
+        $$
+        Notons que la fréquence propre dépend des caractéristiques du pendule élastique (\(k\) et
+        \(m\)) mais non de l’amplitude des oscillations&#x202f;: on parle d’isochronisme des
+        oscillations.
+      </div>
+      
+      <figure>
+        <img src="oscillations_harmoniques.png">
+        <figcaption>Oscillations harmoniques.</figcaption>
+      </figure>
+      
+      <h4>Aspects énergétiques</h4>
+      
+      <div>
+        Du point de vue énergétique, cet oscillateur transforme l’énergie élastique en énergie
+        cinétique et vice versa. L’énergie potentielle élastique vaut&#x202f;:
+        $$
+          \quad \mathcal{E}_p = \frac{1}{2}kx^2 = \frac{1}{2}kA^2\cos^2(\omega_0 t +\varphi)
+        $$
+        L’énergie cinétique vaut&#x202f;:
+        $$
+          \quad \mathcal{E}_c = \frac{1}{2}m\dot{x}^2 = \frac{1}{2}kA^2\sin^2(\omega_0 t +\varphi)
+        $$
+      </div>
+      
+      <div>
+        L’énergie mécanique du pendule élastique vaut&#x202f;:
+        $$
+          \quad \mathcal{E}_m = \mathcal{E}_c + \mathcal{E}_p = \frac{1}{2}kA^2
+        $$
+        Cette énergie reste constante puisque les forces qui travaillent sont conservatives.
+      </div>
+      
+      <h3>Pendule élastique amorti</h3>
+      
+      <h4>Mise en équation</h4>
+      
+      <div>
+        En réalité, la présence des frottements dissipe l’énergie initialement fournie à
+        l’oscillateur. On assiste alors à un phénomène d’amortissement qui se caractérise&#x202f;:
+        <ul>
+          <li>soit par une diminution de l’amplitude des oscillations au cours du temps</li>
+          <li>soit par un retour à l’équilibre sans oscillation</li>
+        </ul>
+      </div>
+      
+      <div>
+        La modélisation des forces de frottement est plus ou moins complexe.<br />
+        Pour des frottements de type visqueux, on choisit généralement, en première approximation,
+        un modèle de frottement linéaire en vitesse&#x202f;: \(f=-\alpha v\). Parfois une
+        modélisation plus réaliste exige d’utiliser un modèle quadratique du type \(f=-\alpha 
+        \left|v\right|\) ce qui présente l’inconvénient de donner une équation différentielle non
+        linéaire.<br />
+        Pour des frottements solides, on utilisera les 
+        <a href="https://sciencesingenieur.github.io/Mecanique-du-point/Dynamique/Dynamique.html#Contact_solide-solide">
+        lois d’Amontons-Coulomb sur le frottement</a>.
+      </div>
+      
+      <div>
+        Nous nous contenterons ici de traiter le pendule élastique en présence de frottements
+        visqueux modélisés par  \(f=-\alpha \dot x\) où \(\alpha\) désigne le coefficient de
+        frottement. L’équation du mouvement s’écrit&#x202f;:
+        $$
+          \quad m\ddot{x} + \alpha \dot x + k x =0
+        $$
+        si l’on pose&#x202f;:
+        $$
+          \quad \sqrt{\frac{k}{m}} \, [\mathrm{rad.s^{-1}}]
+        $$
+        et
+        $$
+          \quad 2\lambda = \frac{\alpha}{m} \, [\mathrm{s^{-1}}]
+        $$
+        elle devient&#x202f;:
+        $$
+          \quad \boxed{ \ddot{x} + 2\lambda \dot x + {\omega_0}^2 x =0 }
+        $$
+        C’est l’équation caractéristique d’un oscillateur harmonique linéairement amorti. Par
+        rapport à l’oscillateur harmonique on note la présence d’un terme supplémentaire
+        \(2\lambda \dot x\) que l’on appelle terme dissipatif car à l’origine de la dissipation
+        d’énergie. Le coefficient \(\lambda\) est appelé coefficient d’amortissement, et l’analyse
+        dimensionnelle de l’équation montre qu’il est homogène à l’inverse d’un temps. Nous verrons
+        ultérieurement que ce temps représente l’ordre de grandeur du temps d’amortissement des
+        oscillations (quand il y en a). In fine, le comportement d’un oscillateur harmonique
+        linéairement amorti est complètement décrit par la donnée de \(\omega_0\) et \(\lambda\).
+      </div>
+      
+      <div>
+        Quelques remarques sur l’équation&#x202f;:
+        <ol>
+          <li>On retrouve l’oscillateur harmonique lorsque \(\lambda \to 0\). Plus \(\lambda\) est
+            petit, moins l’oscillateur est amorti.</li>
+          <li>L’équation du moivement n’est plus invariante par la transformation \(t \mapsto -t\),
+              ce qui traduit un phénomène irréversible.</li>
+          <li>La physique de cet oscillateur est caractérisée par deux temps
+            caractéristiques&#x202f;: \(1/\lambda\) donne l’ordre de grandeur de l’amortissement
+            alors que \(1/\omega_0\) donne celui de la durée entre deux oscillations.</li>
+        </ol>
+      </div>
+      
+      <h4>Régime libre</h4>
+      
+      <div>
+        L’équation caractéristique d’un oscillateur harmonique linéairement amorti admet des
+        solutions de la forme \( x(t) = A\rm{e}^{rt}\).
+        \(r\) doit vérifier l’équation caractéristique du second degré&#x202f;:
+        $$
+          \quad r^2 + 2\lambda r + {\omega_0}^2 = 0
+        $$
+        dont le discriminant est \(\Delta = 4(\lambda^2-{\omega_0}^2)\). Suivant le signe du
+        discriminant, on distingue trois régimes différents.
+      </div>
+      
+      <h5>Régime pseudo-périodique&#x202f;: \(\lambda \lt \omega_0\)</h5>
+      
+      <div>
+        Dans ce cas, le discriminant de l’équation caractéristique est négatif et les racines sont
+        complexes&#x202f;:
+        $$
+          \quad r = - \lambda \pm \mathrm{i}\omega \quad / \omega^2 = {\omega_0}^2 - \lambda^2
+        $$
+      </div>
+      
+      <div>
+        La solution réelle est donc de la forme&#x202f;:
+        $$
+          \quad x(t) = A\mathrm{e}^{-\lambda t}\cos(\omega t + \varphi)
+        $$
+      </div>
+      
+      <figure>
+        <img src="regime_pseudo-periodique.png">
+        <figcaption>Oscillations en régime pseudo-périodique.</figcaption>
+      </figure>
+      
+      <div>
+        L’oscillateur oscille avec une amplitude qui s’amortie exponentiellement au cours du temps.
+        Puisque l’amplitude diminue au cours du temps, on ne peut plus parler de phénomène
+        périodique. Cependant, il est d’usage de définir la durée \(T\) entre deux maxima
+        successifs, qui est aussi la période de \(\cos(\omega t + \varphi)\). Cette durée \(T\) est
+        appelée pseudo-période et vaut&#x202f;:
+        $$
+          \quad T = \frac{2\pi}{\omega} = \frac{2\pi}{\sqrt{{\omega_0}^2 - \lambda^2}}
+        $$
+        Là encore, la pseudo-période est indépendante de l’amplitude initiale. Toutefois on notera
+        l’influence des frottements qui se traduit par une augmentation de la pseudo-période à
+        mesure que \(\lambda\) augmente.
+      </div>
+      
+      <div>
+        L’énergie mécanique décroit au cours du temps. Cela s’explique par la dissipation des forces
+        de frottement et la décroissance vérifie l’équation d’évolution&#x202f;:
+        $$
+          \quad \frac{\mathrm{d}\mathcal{E}_m}{\mathrm{d}t} = - \alpha \dot{x}^2 \leq 0
+        $$
+      </div>
+      
+      <figure>
+        <img src="energie_regime_pseudo-periodique.png">
+        <figcaption>Évolution de l’énergie mécanique en régime pseudo-périodique.</figcaption>
+      </figure>
+      
+      <h5>Régime critique&#x202f;: \(\lambda = \omega_0\)</h5>
+      
+      <div>
+        Le discriminant de l’équation caractéristique est nulle et la racine est double&#x202f;:
+        $$
+          \quad r = -\omega_0
+        $$
+      </div>
+      
+      <div>
+        La solution s’écrit alors
+        $$
+          \quad x(t) = (A + Bt)\mathrm{e}^{-\omega_0 t}
+        $$
+      </div>
+      
+      <figure>
+        <img src="regime_critique.png">
+        <figcaption>Oscillateur en régime critique.</figcaption>
+      </figure>
+      
+      <div>
+        L’oscillateur atteint l’équilibre sans osciller (on dit qu’il n’ y a pas dépassement).
+      </div>
+      
+      <h5>Régime apériodique&#x202f;: \(\lambda \gt \omega_0\)</h5>
+      
+      <div>
+        Le discriminant de l’équation caractéristique est positif et les solutions sont
+        réelles&#x202f;:
+        $$
+          \quad r_{\pm} = - \lambda \pm \sqrt{ \left(  \lambda^2 - {\omega_0}^2 \right)} \lt 0
+        $$
+      </div>
+      
+      <div>
+        La solution est donc
+        $$
+          \quad x(t) = A\mathrm{e}^{r_+ t} + B\mathrm{e}^{r_- t}
+        $$
+      </div>
+      
+      <div>
+        Les deux racines étant négatives, les deux exponentielles décroissent&#x202f;:
+        l’oscillateur atteint l’équilibre sans osciller et d’autant plus lentement que
+        l’amortissement est fort.<br />
+        Finalement, on retiendra les idées simples suivantes&#x202f;: plus l’amortissement est
+        important et moins il y a d’oscillations. Un oscillateur perturbé, oscillera si le
+        coefficient d’amortissement est inférieur à un certain seuil.
+      </div>
+      
+      <h2>Résonances</h2>
+      
+      <div>
+        Certains systèmes présentent, lorsqu’ils sont soumis à une excitation sinusoïdale, une
+        réponse maximale pour une ou plusieurs fréquences caractéristiques (les modes propres). On
+        parle de résonance et ces systèmes sont appelés résonateurs. L’oscillateur harmonique est un
+        exemple de résonateur à un mode propre, car il présente un seul degré de liberté.
+      </div>
+      
+      <h3>Généralités</h3>
+      
+      <div>
+        Reprenons commeexemple le pendule élastique. Soumettons l’autre extrémité du ressort à un
+        déplacement sinusoïdal \(a\cos(\omega t)\) de fréquence \(\nu=\omega/2\pi\) connue.
+        Supposons la présence de frottements visqueux que l’on modélisera par une force
+        \(f_x = - \alpha \dot{x}\).
+      </div>
+      
+      <figure>
+        <img src="pendule_elastique_force.png">
+        <figcaption>Pendule élastique soumis à une excitation sinusoïdale.</figcaption>
+      </figure>
+      
+      <div>
+        La relation fondamentale de la dynamique projetée suivant l’axe horizontal donne
+        $$
+          \quad m \ddot{x} = - k(\ell - \ell_0) - \alpha \dot{x}
+        $$
+        Fixons l’origine des \(x\) à la position de repos du régime libre. On a donc
+        \( a \cos(\omega t ) + \ell = \ell_0 + x\) d’où l’équation du mouvement
+        $$
+          \quad \ddot{x} + \frac{\alpha}{m}\dot{x} + \frac{k}{m}x = \frac{ka}{m}\cos(\omega t )
+        $$
+        équation de la forme
+        $$
+          \quad \boxed{
+          \underbrace{\ddot{x} + 2 \lambda \dot{x} + {\omega_0}^2x }_{\rm{oscillateur}}
+             = \underbrace{ {\omega_0}^2a\cos(\omega t )}_{\rm{excitation}} }
+        $$
+        avec \(\omega_0\) la pulsation propre et \(\lambda\) le coefficient d’amortissement.
+      </div>
+      
+      <div>
+        Il  s’agit d’une équation différentielle linéaire avec un second membre sinusoïdal dont la
+        solution se décompose en deux termes.
+        <ol>
+          <li>La solution particulière, s’exprime comme un signal sinusoïdal de pulsation
+            \(\omega\)&#x202f;; c’est le régime forcé.</li>
+          <li>La solution de l’équation homogène, c’est le régime transitoire. On a vu qu’il y a
+          trois régimes distincts selon la valeur de \(\lambda\). Dans tous les cas réalistes, la
+          présence de termes dissipatifs <span class="incise">même faibles</span> en traîne la
+          disparition du régime transitoire (d’où son nom). Passé ce délai, seul persiste le régime
+          sinusoïdal forcé.</li>
+        </ol>
+      </div>
+      
+      <div>
+         Dans toute la suite, nous supposons que le régime transitoire est complètement dissipé et
+         que seul persiste le régime forcé&#x202f;:
+         $$
+          \quad x(t)t = a_1 \cos(\omega t) + a_2 \sin( \omega t ) \quad t \gg \tau_{amortissement} 
+         $$
+      </div>
+      
+      <h3>Solution en régime forcé</h3>
+      
+      <div>
+        Il s’agit ici de déterminer les expressions des amplitudes \(a_1\) et \(a_2\) en fonction
+        de la pulsation \(\omega\). La méthode classique consiste à remplacer \(x(t)\) par
+        \( a_1 \cos( \omega t ) + a_2 \sin( \omega t )\) dans l’équation différentielle pour en
+        déduire les valeurs de \(a_1\) et \(a_2\)&#x202f;:
+        $$
+          \quad \cos(\omega t)\left[ a_1({\omega_0}^2 - \omega^2) + 2 \lambda \omega a_2 \right]
+          + \sin(\omega t)\left[ a_2({\omega_0}^2 - \omega^2) + 2 \lambda \omega a_1 \right]
+          = {\omega_0}^2 a \cos(\omega t)
+        $$
+        d’où l’on tire deux équations
+        $$
+          \quad \left\{ \begin{aligned}
+            a_1({\omega_0}^2 - \omega^2) + 2 \lambda \omega a_2 & = {\omega_0}^2 a \\
+            a_2({\omega_0}^2 - \omega^2) + 2 \lambda \omega a_1 & = 0
+          \end{aligned} \right.
+        $$
+        Ce système d’équations a pour solution
+        $$
+          \quad \left\{ \begin{aligned}
+          a_1 & = a \frac{{\omega_0}^2({\omega_0}^2-\omega^2)}
+            {({\omega_0}^2-\omega^2)^2 + (2 \lambda \omega)^2} \\
+          a_2 & = a \frac{2 \lambda \omega {\omega_0}^2}
+            {({\omega_0}^2-\omega^2)^2 + (2 \lambda \omega)^2}
+          \end{aligned} \right.
+        $$
+      </div>
+      
+      <div>
+        En général, on préfère écrire les solutions harmoniques sous la forme
+        \(A\cos(\omega t + \varphi) \). En utilisant l’identité
+        $$
+          \quad a_1 \cos(\omega t) + a_2 \sin( \omega t ) = A \cos(\omega t + \varphi )
+        $$
+        avec
+        $$
+          \quad \left\{ \begin{aligned}
+            A & = \sqrt{{a_1}^2+{a_2}^2} \\
+            \tan \varphi & = - \frac{a_2}{a_1}
+          \end{aligned} \right.
+        $$
+        l’élongation s’écrit finalement \(x(t)=A\cos(\omega t + \varphi) \) avec
+        $$
+          \quad A = \frac{a{\omega_0}^2}{\sqrt{({\omega_0}^2-\omega^2)^2 + (2 \lambda \omega)^2}}
+        $$
+        et
+        $$
+          \quad  \tan \varphi = \frac{2\lambda\omega}{\omega^2 - {\omega_0}^2}
+        $$
+      </div>
+      
+      <h3>Résonance d’élongation</h3>
+      
+      <div>
+         Étudions maintenant l’évolution de l’amplitude des oscillations en fonction de la
+         fréquence imposée par l’excitation.
+      </div>
+      
+      <div>
+        Si l’amortissement est suffisamment faible, l’amplitude des oscillations passe par un
+        maximum&#x202f;: c’est la résonance en élongation. On montre que&#x202f;:
+        <ul>
+          <li>la pulsation de résonance vaut \(\omega_r = \sqrt{{\omega_0}^2-2\lambda^2}\)</li>
+          <li>la résonance n’a donc lieu que si le coefficient d’amortissement est en dessous d’un
+            certain seuil&#x202f;: \(\lambda \lt \frac{\sqrt{2}}{2}\omega_0= \lambda_0\)</li>
+          <li>si \(\lambda \ll \lambda_0\), la fréquence de résonance s’identifie avec la fréquence
+           propre&#x202f;: \(\omega_r \simeq \omega_0\)</li>
+          <li>plus l’amortissement est faible plus la résonance est aigüe</li>
+          <li>lorsque \(\lambda=\lambda_0\), l’amplitude des oscillations vaut \(a\) sur une grande
+             plage de fréquence (à basse fréquence), ce qui confère au ressort un comportement
+             identique à celui d’une tige rigide</li>
+          <li>si \(\lambda \gt \lambda_0\), le phénomène de résonance disparaît</li>
+        </ul>
+      </div>
+      
+      <figure>
+        <img src="amplitude_vs_freq.png">
+        <figcaption>Réponse fréquentielle de l’amplitude d’un oscillateur vis à vis d’une excitation
+          sinusoïdale.</figcaption>
+      </figure>
+      
+      <div>
+        L’amplification des oscillations d’élongation à la résonance peut être à l’origine d’effets
+        néfastes comme la destruction d’habitations suite à un séisme. Elle peut aussi être
+        recherchée pour construire des appareils sensibles à l’instar des sismographes.
+      </div>
+      
+      <h3>Aspects énergétiques</h3>
+      
+      <div>
+        Pour entretenir les oscillations d’un oscillateur harmonique il faut fournir de l’énergie
+        comme nous allons le montrer et ceci, d’autant plus que les frottements sont importants.
+      </div>
+      
+      <div>
+        Reprenons l’étude du pendule élastique mis en mouvement par une excitation harmonique, en
+        considérant le système {ressort + masse}. Ce système est soumis à deux forces
+        extérieures&#x202f;:
+        <ol>
+          <li>La force \(\overrightarrow{f_{op}}\) qu’exerce l’opérateur pour entretenir le forçage
+            sinusoïdal.</li>
+          <li>La force de frottement \(\overrightarrow{f}=-\alpha\dot{x}\overrightarrow{u_x}/) qui
+            agit sur la masse.</li>
+        </ol>
+      </div>
+
+      <figure>
+        <img src="force_ext_systeme.png">
+        <figcaption>Forces extérieures agissant sur le système masse-ressort.</figcaption>
+      </figure>
+      
+      <div>
+        Les forces de tension élastique sont conservatives et internes au système. En vertu du
+        théorème de l’énergie mécanique, on a
+        $$
+          \quad \frac{\mathrm{d}\mathcal{E}_m}{\mathrm{d}t} = \mathcal{P}^{nc}
+            = \mathcal{P}_{\mathrm{op}} + \mathcal{P}_{\mathrm{frottement}}
+        $$
+        où \(\mathcal{P}_{\mathrm{op}}\) représente la puissance fournie par l’opérateur, et
+        \(\mathcal{P}_{\mathrm{frottement}}\) celle de la force de frottement. 
+      </div>
+      
+      <div>
+        Prenons la moyenne de cette relation sur une période
+        $$
+          \quad \overline{\mathcal{P}}_{\mathrm{op}} + \overline{\mathcal{P}}_{\mathrm{frottement}}
+            = \overline{\frac{\mathrm{d}\mathcal{E}_m}{\mathrm{d}t}} = 0
+        $$
+        Ce qui traduit le fait, qu’en moyenne, l’opérateur doit fournir de l’énergie pour compenser
+        la dissipation d’énergie par les frottements.
+      </div>
+      
+      <div>
+        Poursuivons notre calcul. La force de frottement développe une puissance moyenne
+        $$
+          \quad \overline{\mathcal{P}}_{\mathrm{frottement}}
+            = \overline{\overrightarrow{f}\cdot\overrightarrow{v}}
+            = - \alpha \overline{ \dot{x}^2 }
+        $$
+        En régime sinusoïdal forcé, on a trouvé
+        $$
+          \quad x(t) = A\cos\left( \omega_0 t + \varphi \right)
+        $$
+        soit
+        $$
+          \quad \dot{x} = -A\omega\sin( \omega t + \varphi )
+        $$
+        In fine, le dispositif excitateur fournit une puissance moyenne
+        $$
+          \quad \overline{\mathcal{P}}_{\mathrm{op}} =
+            \alpha A^2 \omega^2 \underbrace{\overline{\sin^2( \omega t + \varphi )}}_{1/2}
+            = \frac{1}{2} \alpha A^2 \omega^2
+        $$
+      </div>
+      
+      <div>
+        En régime sinusoïdal forcé, la puissance moyenne fournie par le dispositif excitateur est
+        proportionnelle au carré de l’amplitude de vitesse \(V=A\omega\) et au coefficient de
+        frottement.
+      </div>
+      
+      <div>
+        La puissance fournie obéit également à un phénomène de résonance. En effet, en remplaçant
+        \(A\) par son expression, on trouve
+        $$
+          \quad \overline{\mathcal{P}}_{\mathrm{op}} =
+            \frac{1}{2} \alpha {\omega_0}^4 a^2
+              \frac{\omega^2}{({\omega_0}^2-\omega^2)^2 + (2 \lambda \omega)^2}
+        $$
+        En divisant le numérateur et le dénominateur par \((2 \lambda \omega)^2\) et en remplaçant
+        \(\alpha\) par \(2m\lambda\), on obtient
+        $$
+          \quad \overline{\mathcal{P}}_{\mathrm{op}} =
+            \frac{\mathcal{P}_{\mathrm{max}}}
+              {1 + \left( \frac{{\omega_0}^2-\omega^2}{2 \lambda \omega} \right)^2}
+        $$
+        avec
+        $$
+          \quad \mathcal{P}_{\mathrm{max}}
+            = \frac{1}{4}\frac{{m\omega_0}^4a^2}{\lambda}
+        $$
+      </div>
+      
+      <figure>
+        <img src="puissance_vs_freq.png">
+        <figcaption>Évolution fréquentielle de la puissance absorbée par l’oscillateur.</figcaption>
+      </figure>
+      
+      <div>
+        Cette puissance évolue suivant une courbe en cloche. On observe un phénomène de résonance
+        lorsque \(\omega=\omega_0\) et le maximum est d’autant plus important quel’amortissement est
+        faible.
+      </div>
+      
+      <h3>Facteur de qualité</h3>
+      
+      <div>
+        
+      </div>
+      
+      <div>
+        
+      </div>
+      
+      <div>
+        
+      </div>
+      
+    </section>
+  </body>
+</html>

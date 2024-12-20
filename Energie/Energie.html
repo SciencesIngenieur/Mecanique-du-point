@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Approche énergétique</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+    
+      <h1>Approche énergétique</h1>
+
+      <h2>Travail d’une force</h2>
+      
+      <h3>Définition</h3>
+      
+      <div>
+        Lorsqu’une force s’exerce sur un point matériel \(M\), c’est sa composante le long de la
+        trajectoire qui modifie la norme de la vitesse.
+      </div>
+      
+      <div>
+        Pour mesurer combien une force \(\overrightarrow{f}\) travaille à accélérer ou a ralentir un
+        point matériel lors de son déplacement entre les points \(A\) et \(B\), on définit une
+        grandeur, appelée <b>travail mécanique</b> de \(\overrightarrow{f}\) et noté
+        \( W_{A \to B} \)&#x202f;:
+        $$
+          \quad \boxed{ W_{A \to B} \overset{def}{=}
+           \int_{\mathscr{C}_{AB}} \overrightarrow{f} \cdot \overrightarrow{\rm{d}\ell} }
+        $$
+        où \(\overrightarrow{\rm{d}\ell}\) désigne le vecteur déplacement infinitésimal du point
+        \(M\) le long du trajet \(\mathscr{C}_{AB}\).
+      </div>
+      
+      <figure>
+        <img src="circulation_force.svg">
+        <figcaption>Circulation d’une force.</figcaption>
+      </figure>
+      
+      <div>
+        Le travail est donc une intégrale curviligne dont le résultat dépend, a priori, de la force
+        et du trajet.<br />
+        On remarque que si la force fait un angle aigu avec le vecteur déplacement, alors
+        \( W_{A \to B} \gt 0\)&#x202f;: le travail est <b>moteur</b>.<br />
+        Si, au contraire, la force fait constamment un angle obtus avec le vecteur déplacement,
+        \( W_{A \to B} \lt 0\)&#x202f;: le travail est <b>résistant</b>.<br />
+        Enfin si la force est orthogonal au déplacement, alors \( W_{A \to B} = 0\)&#x202f;: la
+        force ne fait qu’incurver la trajectoire sans modifier la norme de la vitesse.
+      </div>
+      
+      <div>
+        Dans le Système international d’unités, le travail s’exprime en joule (symbole&#x202f;:
+        \(\rm{J}\)). Une analyse dimensionnelle donne
+        $$
+          \quad [W] = \rm{ML^2T^{-2}} \quad \Rightarrow \quad 1 \rm{J} = 1 \rm{kg.m^2.s^{-2}}
+        $$
+      </div>
+      
+      <div>
+        L’expression du travail élémentaire d’une force le long d’un déplacement
+        élémentaire \(\overrightarrow{\rm{d}\ell}\) se note&#x202f;:
+        $$
+          \quad \delta W = \overrightarrow{f} \cdot \overrightarrow{\rm{d}\ell}
+        $$
+      </div>
+      
+      <div>
+        Notons que l’expression du travail se simplifie dans le cas d’une force uniforme&#x202f;:
+        pour un trajet \(\mathscr{C}_{AB}\) on obtient
+        $$
+          \quad W_{A \to B} = \overrightarrow{f} \cdot \overrightarrow{AB}
+        $$
+      </div>
+      
+      <h3>Travail de la pesanteur</h3>
+      
+      <div>
+        Calculons le travail de la force de pesanteur lorsque le centre de gravité \(G\) d’un corps
+        matériel se déplace du point \(A\) au point \(B\). Le poids étant une force constante, on a
+        $$
+          \quad \boxed{ W_{A \to B} = \overrightarrow{P} \cdot \overrightarrow{AB} = \pm mgh }
+        $$
+        où \(h\) désigne la dénivellation (\(h \gt 0\)). On mettra le signe \(+\) quand \(G\)
+        descend (travail moteur) et le signe \(-\) quand \(G\) monte (travail résistant).
+      </div>
+      
+      <figure>
+        <img src="travail_pesanteur.svg">
+        <figcaption>Calcul du travail de pesanteur.</figcaption>
+      </figure>
+      
+      <div>
+        On remarque ici que le travail du poids ne dépend pas de la forme du trajet mais seulement
+        de la dénivellation. Par conséquent, si le centre d’inertie revient à sa position initiale,
+        le poids n’aura globalement produit aucun travail. On verra que le poids appartient à
+        l’ensemble des <b>forces conservatives</b>.
+      </div>
+      
+      <h3>Travail d’un frottement solide</h3>
+      
+      <div>
+        Un lugeur glisse sur une piste de forme quelconque et l’on suppose que la force de
+        frottement qu’exerce la neige sur la luge est constante et vaut \(T\). Calculons le travail
+        produit par les forces de contact après avoir parcouru une distance \(L\) entre les points
+        \(A\) et \(B\).<br />
+        Tout d’abord, l’action normale à la surface ne travaille pas puisqu’elle est orthogonal à la
+        vitesse de glissement. Le travail des forces de contact s’identifie donc avec le travail de
+        la force de frottement&#x202f;:
+        $$
+          \quad  W_{A \to B}
+           = \int_{\mathscr{C}_{AB}} \overrightarrow{T} \cdot \overrightarrow{\rm{d}\ell}
+           = - \int_{\mathscr{C}_{AB}} T \rm{d}\ell = -T L
+        $$
+      </div>
+      
+      <figure>
+        <img src="travail_frottement.svg">
+        <figcaption>Calcul du travail des forces de frottement.</figcaption>
+      </figure>
+      
+      <div>
+        Contrairement au poids, le travail des forces de frottement dépend de la longueur du trajet
+        et donc de la forme du chemin parcouru.
+      </div>
+      
+      <h2>Puissance d’une force</h2>
+      
+      <div>
+        Pour mesurer à quel rythme une force travaille, on introduit la notion de puissance
+        mécanique.<br />
+        La puissance d’une force, que nous noterons \(\mathscr{P}\), est le quotient du travail
+        fourni sur la durée lorsque cette durée tend vers \(0\)&#x202f;:
+        $$
+          \quad \mathscr{P} = \lim_{\delta t \to 0} \frac{\delta W}{\delta t}
+            =\lim_{\delta t\to 0}\frac{\overrightarrow{f}\cdot\overrightarrow{\rm{d}\ell}}{\delta t}
+            = \overrightarrow{f} \cdot \overrightarrow{v}
+        $$
+        où \(\overrightarrow{v}\) est la vitesse du point d’application de la force.<br />
+        La puissance est donc une grandeur instantanée.
+      </div>
+      
+      <div>
+        Finalement, le travail d’une force sur un trajet \(\mathscr{C}_{AB}\) peut se calculer à
+        partir de la puissance&#x202f;:
+        $$
+          \quad  \boxed{ W_{A \to B} = \int_{t_A}^{t_B} \mathscr{P} \rm{d}t }
+        $$
+        où \(t_A\) et \(t_B\) sont les instants où le point matériel se trouve en \(A\) et \(B\).
+      </div>
+      
+      <div>
+        Dans le Système international d’unités, la puissance s’exprime en watt (symbole&#x202f;:
+        \(\rm{W}\)). Une analyse dimensionnelle donne immédiatement \(1\rm{W}=1\rm{J.s^{-1}}\).
+      </div>
+      
+      <h2 id="TEC">Théorème de l’énergie cinétique</h2>
+      
+      <div>
+        Considérons un point matériel \(M\) de masse \(m\) animé d’une vitesse \(\overrightarrow v\)
+        dans un référentiel galiléen \(\mathcal{R}\) et soumis à un ensemble de forces
+        \(\overrightarrow{f_k}\).<br />
+        La relation fondamentale de la dynamique nous donne
+        $$
+          \quad m \frac{\mathrm{d}\overrightarrow v}{\mathrm{d}t} = \sum_{k} \overrightarrow{f_k}
+        $$
+      </div>
+      
+      <div>
+        Multiplions par \(\overrightarrow v\) cette expression&#x202f;:
+        $$
+          \quad m \frac{\mathrm{d}\overrightarrow v}{\mathrm{d}t} \overrightarrow v
+          = \sum_{k} \overrightarrow{f_k} \cdot \overrightarrow v
+        $$
+        En remarquant que
+        $$
+          \quad \frac{\mathrm{d} v^2}{\mathrm{d}t}
+          = \frac{\mathrm{d}}{\mathrm{d}t}\left( \overrightarrow v \cdot \overrightarrow v\right)
+          = 2 \times \overrightarrow v \cdot \frac{\mathrm{d}\overrightarrow v}{\mathrm{d}t}
+        $$
+        Il vient
+        $$
+          \quad \frac{\mathrm{d}}{\mathrm{d}t}\left( \frac{1}{2}mv^2\right)
+          = \sum_{k} \mathscr{P}_k
+        $$
+      </div>
+      
+      <div>
+        Le terme de droite correspond à la somme des puissances mécaniques.
+      </div>
+      
+      <div>
+        Le terme de gauche est la dérivée d’une quantitité qui ne dépend que du point matériel et de
+        son mouvement et est appelée <b>énergie cinétique</b>&#x202f;:
+        $$
+          \quad \boxed{ \mathscr{E}_c (M) \overset{def}{=} \frac{1}{2} m v^2 }
+        $$
+        Une analyse dimensionnelle donne \([\mathscr{E}_c] = ML^2T^{-2}\) ce qui correspond à la
+        dimension d’un travail.
+      </div>
+      
+      <div>
+        Nous avons donc obtenu une équation d’évolution de l’énergie cinétique&#x202f;:
+        $$
+          \quad \frac{\mathrm{d}}{\mathrm{d}t} (\mathscr{E}_c) = \sum_k \mathscr{P}_k
+        $$
+        Si nous intégrons cette équation sur le temps entre les instants \(t_A\) et \(t_B\) , on
+        obtient&#x202f;:
+        $$
+          \quad \Delta \mathscr{E}_c \overset{def}{=} \mathscr{E}_c(B) - \mathscr{E}_c(A)
+            = \sum_k W_{A \to B}^k
+        $$
+      </div>
+      
+      <div>
+        <u>Théorème de l’énergie cinétique (TEC)&#x202f;:</u><br />
+        Dans un référentiel galiléen \(\mathcal{R}\), l’énergie cinétique \(\mathscr{E}_c\) d’un
+        point matériel \(M\) subissant les actions \(\overrightarrow{f_k}\)vérifie la loi
+        d’évolution&#x202f;:
+        $$
+          \quad \boxed{ \begin{align}
+          & \frac{\mathrm{d}}{\mathrm{d}t}( \mathscr{E}_c ) = \sum_k \mathscr{P}_k \\
+          & \Delta \mathscr{E}_c = \sum_k W_{A \to B}^k
+          \end{align} }
+        $$
+        La première formulation est différentielle, la seconde intégrale.
+      </div>
+      
+      <h2>Forces conservatives</h2>
+      
+      <h3>Énergie potentielle</h3>
+      
+      <div>
+        Par définition, une force est dite <b>conservative</b> lorsqu’elle s’exprime comme le
+        gradient d’une fonction scalaire de l’espace \(\mathscr{E}_p(M)\) dite <b>énergie
+        potentielle d’interaction</b>. En coordonnées cartésiennes cela donne&#x202f;:
+        $$
+          \quad \boxed{
+            \overrightarrow f = - \overrightarrow \nabla \mathscr{E}_p(x,y,z)
+            = \left( \begin{matrix} 
+                -\frac{\partial \mathscr{E}_p}{\partial x} \\ 
+                -\frac{\partial \mathscr{E}_p}{\partial y}  \\
+                -\frac{\partial \mathscr{E}_p}{\partial z} 
+              \end{matrix} \right) }
+        $$
+        On remarque immédiatement que la fonction \(\mathscr{E}_p\) a bien la même dimension qu’un
+        travail puisque \([f]=[\mathscr{E}_p]/L\)&#x202f;; ce qui explique son appellation.
+        L’énergie potentielle \(\mathscr{E}_p\) s’exprime donc en joule.
+      </div>
+      
+      <h3>Détermination de l’énergie potentielle</h3>
+      
+      <div>
+        Il y a deux façons d’obtenir l’énergie potentielle \(\mathscr{E}_p(x,y,z)\) associée à une
+        force&#x202f;:<br />
+        <ol>
+          <li>Soit on cherche la fonction scalaire qui vérifie
+          \(\overrightarrow f = - \overrightarrow \nabla \mathscr{E}_p(x,y,z)\) en résolvant trois
+          équations aux dérivées partielles.</li>
+          <li>Soit on cherche la fonction scalaire à partir de la relation \( \delta W = 
+          \overrightarrow{f} \cdot \overrightarrow{\rm{d}\ell} = -\rm{d}\mathscr{E}_p\).</li>
+        </ol>
+      </div>
+      
+      <div>
+        <u>Remarque&#x202f;:<br /></u>
+        La relation \(\delta W = -\rm{d}\mathscr{E}_p\) s’obtient de la manière
+        suivante&#x202f;:<br />
+        Sachant qu’en coordonnées cartésiennes, le déplacement infinitésimal s’écrit
+        \(\overrightarrow{\mathrm{d}\ell} = \mathrm{d}x \overrightarrow{u_x}
+        + \mathrm{d}y \overrightarrow{u_y} + \mathrm{d}z \overrightarrow{u_z}\), on a
+        $$
+          \quad \begin{aligned} \delta W & = \overrightarrow{f} \cdot \overrightarrow{\rm{d}\ell} \\
+            & = - \overrightarrow \nabla \mathscr{E}_p \cdot \overrightarrow{\mathrm{d}\ell} \\
+            & = - \left( \frac{\partial \mathscr{E}_p}{\partial x} \mathrm{d}x
+                 +\frac{\partial \mathscr{E}_p}{\partial y} \mathrm{d}y
+                 +\frac{\partial \mathscr{E}_p}{\partial z} \mathrm{d}z \right) \\
+            & = -\rm{d}\mathscr{E}_p
+          \end{aligned}
+        $$
+      </div>
+      
+      <div>
+        <u>Exemple&#x202f;:</u> cherchons l’énergie potentielle associée à la force de pesanteur
+        \(\overrightarrow P=m\overrightarrow g\).<br />
+      </div>
+      
+      <div>
+        L’espace étant munis d’un repère cartésien d’axe \(Oz\) vertical ascendant, on obtient
+        $$
+          \quad \overrightarrow P = - m g \overrightarrow{u_z} \Rightarrow 
+          \left\{
+            \begin{aligned} 
+              0 & = -\frac{\partial \mathscr{E}_p}{\partial x} \\
+              0 & = -\frac{\partial \mathscr{E}_p}{\partial y} \\
+              - m g & = -\frac{\partial \mathscr{E}_p}{\partial z}
+            \end{aligned}
+          \right.
+        $$
+        Les deux premières relations traduisent le fait que l’énergie potentielle ne dépend que de
+        \(z\).<br />
+        L’intégration de la dernière relation donne \(\mathscr{E}_p(z)=mgz+C^{te}\).
+      </div>
+      
+      <div>
+        On peut aussi exprimer le <q>travail élémentaire</q>&#x202f;:
+        $$
+          \quad \delta W = \overrightarrow P \cdot \overrightarrow{\rm{d}\ell}
+            = -mg\rm{d}z = - \rm{d}\mathscr{E}_p
+        $$
+        Ce qui donne \(\mathscr{E}_p(z)=mgz+C^{te}\).
+      </div>
+      
+      <div>
+        La détermination de l’énergie potentielle introduit toujours une constante scalaire. Cette
+        constante n’a aucun sens physique puisqu’elle n’intervient pas dans les grandeurs que l’on
+        peut mesurer (la force, le travail, etc.). C’est pourquoi, on peut arbitrairement la poser à
+        0 (ce qui revient à poser une origine des énergies potentielles) ou la conserver dans les
+        calculs sachant que les grandeurs physiques mesurables n’en dépendront pas.
+      </div>
+      
+      <h3>Propriétés</h3>
+      
+      <div>
+        Calculons le travail d’une force conservative  \(\overrightarrow f\) le long d’un trajet
+        quelconque \(\mathscr{C}_{AB}\).
+        $$
+          \quad \begin{align} W_{A \to B} & =
+            \int_{\mathscr{C}_{AB}} \overrightarrow f \cdot \overrightarrow{\mathrm{d}\ell} \\
+           & = - \int_{\mathscr{C}_{AB}} \mathrm{d}\mathscr{E}_p \\
+           & = \mathscr{E}_p(A) - \mathscr{E}_p(B)
+           \end{align}
+        $$
+      </div>
+      
+      <div>
+        Autrement dit, une force conservative produit un travail qui <b>ne dépend pas de la forme du
+        trajet</b> mais uniquement de la position des points A et B.<br />
+        En conséquence, si le trajet se referme sur lui-même, le travail est nul.<br />
+        La réciproque est vraie, c’est-à-dire qu’une force dont le travail dépensé est nul quel que
+        soit le circuit fermé parcouru par le point d’application est forcément conservative.<br />
+        Pour résumer&#x202f;:
+        $$
+          \quad \oint_{\mathscr{C}} \overrightarrow f \cdot \overrightarrow{\rm{d}\ell} = 0
+          \quad \forall \mathscr{C} \quad \Leftrightarrow \quad
+          \overrightarrow f = - \overrightarrow \nabla \mathscr{E}_p
+        $$
+      </div>
+      
+      <!--<div>
+        Les forces de frottement sont nécessairement non conservatives puisqu’elles s’opposent, par
+        nature, au mouvement. En effet,
+        $$
+          \quad \overrightarrow f = - \alpha(v) \overrightarrow v \quad \Rightarrow \quad
+          \oint_{\mathscr{C}} \overrightarrow f \cdot \overrightarrow{\rm{d}\ell} =
+          - \int_{t_1}^{t_2} \alpha(v) v^2 \rm{d}t \lt 0
+        $$
+      </div>-->
+      
+      <div>
+        Un autre propriété de la force conservative est qu’elle est toujours dirigée vers les
+        valeurs décroissantes de l’énergie potentielle. <b>La force aura donc tendance à amener le
+        point matériel dans la zone d’énergie potentielle minimale</b>.
+      </div>
+      
+      <div>
+        Le tableau ci-dessous donne le caractère conservatif ou non de quelques interactions
+        classiques.
+      </div>
+      
+      <table>
+        <tr>
+          <th>Force</th>
+          <th>Expression</th>
+          <th>Statut</th>
+          <th>Énergie potentielle</th>
+        </tr>
+        <tr>
+          <td>Gravitation</td>
+          <td>\(\overrightarrow f =-\mathscr{G} \frac{m_1m_2}{r^2} \overrightarrow{u}\)</td>
+          <td>Conservative</td>
+          <td>\(\mathscr{E}_p =-\mathscr{G} \frac{m_1m_2}{r} + C^{te}\)</td>
+        </tr>
+        <tr>
+          <td>Électrique</td>
+          <td>\(\overrightarrow f = \frac{q_1q_2}{4\pi\varepsilon_0r^2} \overrightarrow{u}\)</td>
+          <td>Conservative</td>
+          <td>\(\mathscr{E}_p = \frac{q_1q_2}{4\pi\varepsilon_0r} + C^{te}\)</td>
+        </tr>
+        <tr>
+          <td>Magnétique</td>
+          <td>\(\overrightarrow f = q\overrightarrow{v} \wedge \overrightarrow{B}\)</td>
+          <td>Ne travaille pas</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Pesanteur uniforme</td>
+          <td>\(\overrightarrow P = m \overrightarrow{g}\)</td>
+          <td>Conservative</td>
+          <td>\(\mathscr{E}_p = mgz + C^{te}\)</td>
+        </tr>
+        <tr>
+          <td>Frottements solide/solide</td>
+          <td>\(\overrightarrow R = \overrightarrow{N} + \overrightarrow{T}\)</td>
+          <td>Non conservative</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Frottements fluide/solide</td>
+          <td>\(\overrightarrow f = -\alpha(v) \overrightarrow{v}\)</td>
+          <td>Non conservative</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Tension élastique</td>
+          <td>\(\overrightarrow T = -k(l-l_0) \overrightarrow{u}\)</td>
+          <td>Conservative</td>
+          <td>\(\mathscr{E}_p = \frac{1}{2}k(l-l_0)^2 + C^{te}\)</td>
+        </tr>
+        <caption>Caractère conservatif ou non de quelques interactions classiques.</caption>
+      </table>
+      
+      <h2>Théorème de l’énergie mécanique</h2>
+      
+      <h3>Systèmes conservatifs</h3>
+      
+      <div>
+        Lorsqu’un système dynamique est soumis à des forces conservatives ou des forces ne
+        travaillant pas, on dit que le système est conservatif.
+      </div>
+      
+      <div>
+        Notons \(\mathscr{E}_p^k\) l’énergie potentielle associée aux différentes forces
+        \(\overrightarrow{f_k}\) que subit un point matériel \(M\) et appliquons le théorème de
+        l’énergie cinétique entre deux positions quelconques \(A\) et \(B\) de \(M\). On obtient
+        $$
+          \quad \mathscr{E}_c(B) - \mathscr{E}_c(A) = \sum_{k} W_{A \to B}^k
+          = - \sum_{k} \left( \mathscr{E}_p^k(B) - \mathscr{E}_p^k(A) \right)
+        $$
+        d’où l’on tire
+        $$
+          \quad \mathscr{E}_c(A) + \sum_{k} \mathscr{E}_p^k(A)
+            = \mathscr{E}_c(B) + \sum_{k} \mathscr{E}_p^k(B)
+        $$
+      </div>
+      
+      <div>
+        <u>Théorème de l’énergie mécanique</u><br />
+        Pour tout système conservatif, la quantité, appelée énergie mécanique, somme de l’énergie
+        cinétique et des énergies potentielles, se conserve au cours du mouvement.
+        $$
+          \quad \boxed{\mathscr{E}_m \overset{def}{=}\mathscr{E}_c+\sum_{k}\mathscr{E}_p^k =C^{te} }
+        $$
+      </div>
+      
+      <div>
+        Cette relation est appelée intégrale première du mouvement comme toute relation de
+        conservation ne faisant intervenir que les dérivées premières des coordonnées par rapport au
+        temps. Bien qu’en général, cette relation possède moins d’information que le PFD, elle
+        présente l’intérêt non négligeable de relier entre elles des grandeurs scalaires ce qui
+        évite le formalisme vectoriel. Par exemple, quand on cherche une relation entre vitesse et
+        position, il peut être judicieux d’écrire la relation de conservation de l’énergie
+        mécanique.
+      </div>
+      
+      <h3>Systèmes non conservatifs</h3>
+      
+      <div>
+        Lorsqu’une des forces n’est pas conservative, comme c’est le cas pour les forces de
+        frottement, on dit que le système n’est pas conservatif.<br />
+        Le théorème de l’énergie cinétique donne alors&#x202f;:
+        $$
+          \quad \Delta \mathscr{E}_c = \sum_{k} W_{A \to B}^k + W_{A \to B}^{nc}
+           = - \sum_{k} \Delta \mathscr{E}_p^k + W_{A \to B}^{nc}
+        $$
+        où \(W_{A \to B}^{nc}\) désigne le travail des forces non conservatives.
+      </div>
+      
+      <div>
+        Autrement dit, l’énergie mécanique ne se conserve pas&#x202f;:
+        $$
+          \quad \Delta \mathscr{E}_m = \mathscr{E}_m(B) - \mathscr{E}_m(A) = W_{A \to B}^{nc}
+        $$
+      </div>
+      
+      <div>
+        Dans le cas des forces de frottement, le travail est résistant puisque la force est opposée
+        au sens du mouvement&#x202f;: \(W_{A \to B}^{nc}\leq 0\) et l’énergie mécanique diminue au
+        cours du temps.
+      </div>
+      
+    </section>
+  </body>
+</html>

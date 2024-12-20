@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cinématique du point matériel</title>
+    <link rel="stylesheet" type="text/css" media="print,screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+    
+      <h1>Cinématique du point matériel</h1>
+
+      <h2>Domaine d’étude</h2>
+      
+      <div>
+        L’objet de la cinématique du point est d’étudier le mouvement d’un point au cours du temps
+        indépendamment des causes qui produisent le mouvement. Les objectifs sont la détermination
+        des grandeurs cinématiques telles que les vecteurs accélération, vitesse, position et
+        l’équation horaire de la trajectoire de ce point par rapport à un référentiel choisi par
+        l’observateur.
+      </div>
+        
+      <h2>Définitions</h2>
+      
+      <h3>Point matériel</h3>
+      
+      <div>
+        On appelle point matériel ou systeme ponctuel un système mécanique de taille macroscopique
+        mais de dimension négligeable devant son déplacement. Le système mécanique est alors
+        modélisé par un point géométrique sans dimension et sans forme auquel est associée sa masse.
+      </div>
+      
+      <h3>Événement</h3>
+      
+      <div>
+        Les phénomènes physiques peuvent être considérés comme un ensemble d’événements,
+        c’est-à-dire des phénomènes élémentaires qui se produisent en des endroits déterminés de
+        l’espace et à un instant donné.
+      </div>
+      
+      <h3>Temps</h3>
+      
+      <div>
+        En mécanique newtonienne, le temps est une variable scalaire indépendante (généralement
+        représentée par la lettre \(t\)) qui repère l’instant où un évenement s’est produit. Le
+        temps ne varie que dans un sens tel que la cause précède l’effet.<br/>
+        Quand on sait classer la succession temporelle des évènements on dit que l’on a établit une
+        chronologie.<br/>
+        On suppose que le temps est uniforme&#x202f;: les lois de la physique sont invariantes par
+        translation dans le temps.
+      </div>
+      
+      <h3>Repère d’espace</h3>
+      
+      <div>
+        On appelle repère d’espace un ensemble de points dont les distances sont invariables au
+        cours du temps. Un tel ensemble est aussi appelé un solide de référence. Par exemple une
+        table, un bateau, la terre peuvent servir de repère d’espace.
+      </div>
+      
+      <h3>Système de coordonnées</h3>
+      
+      <div>
+        On exprime la position d’un objet par rapport à un système de coordonnées qui est constitué
+        d’un ensemble de trois axes dont chacun correspond à une direction de l’espace et qui est
+        considéré comme fixe par rapport à un repère d’espace. On dit que le système de coordonnées
+        est lié au repère.
+      </div>
+      
+      <div>
+        On considère que l’espace physique est un espace affine euclidien de dimension 3.<br/>
+        Cela signifie qu’il faut 3 coordonnées pour définir la position d’un point \(M\) quelconque
+        dans l’espace.
+      </div>
+
+      <div>
+        On note \(O\) un point fixe de l’espace qui sert de référence (point origine).<br/>
+        Le point \(M\) est alors repéré par rapport à \(O\)&#x202f;: on note
+        \( \overrightarrow { r } = \overrightarrow { OM } \) 
+        le vecteur position de \(M\).
+      </div>
+
+      <div>
+        Le vecteur \( \overrightarrow{OM} \) est repéré grâce à une base vectorielle notée
+        \( \left(
+          \overrightarrow{ u_1 }, \overrightarrow{ u_2 }, \overrightarrow{ u_3 }
+           \right) \).<br/>
+        La base vectorielle et le point origine constituent un repère d’espace (ou repère de
+        référence)
+        \( \left(
+          O, \overrightarrow{ u_1 }, \overrightarrow{ u_2 }, \overrightarrow{ u_3 }
+           \right) \).<br/>
+        Le vecteur \( \overrightarrow { OM } \) peut alors se décomposer dans cette base
+        en&#x202f;:
+        $$
+          \overrightarrow { OM } = c_1\overrightarrow{ u_1 } + c_2\overrightarrow{ u_2 }
+          + c_3\overrightarrow{ u_3 }
+        $$
+        \( (c_1, c_2, c_3) \) sont les coordonnées du vecteur \( \overrightarrow { OM } \)
+        dans la base 
+        \( \left( 
+          \overrightarrow{ u_1 }, \overrightarrow{ u_2 }, \overrightarrow{ u_3 }
+           \right) \).
+      </div>
+
+      <div>
+        Pour des raisons pratiques, il important que la base utilisée soit orthonormée
+        directe.<br/>
+        Cela signifie que&#x202f;:
+        $$
+          \begin{align}
+            & \overrightarrow{ u_1 } \cdot \overrightarrow{ u_2 } = 0 \\
+            & \overrightarrow{ u_1 } \cdot \overrightarrow{ u_3 } = 0 \\
+            & \overrightarrow{ u_2 } \cdot \overrightarrow{ u_3 } = 0 \\
+            & \overrightarrow{ u_1 } \wedge \overrightarrow{ u_2 } = \overrightarrow{ u_3 } \\
+            & \overrightarrow{ u_2 } \wedge \overrightarrow{ u_3 } = \overrightarrow{ u_1 } \\
+            & \overrightarrow{ u_3 } \wedge \overrightarrow{ u_1 } = \overrightarrow{ u_2 }
+          \end{align}
+        $$
+      </div>
+
+      <div>
+        Il est très important de bien choisir le système de coordonnées dans lequel la description
+        du problème va être faite pour simplifier les calculs.
+      </div>
+      
+      <h3>Système de référence</h3>
+      
+      <div>
+        On utilise pour l’étude de tout mouvement un système de référence ou référentiel formé d’un
+        repère d’espace (repère de référence) et d’un système chronométrique (horloge) dont la
+        variable est le temps.
+      </div>
+      
+      <div>
+        L’hypothèse fondamentale de la cinématique classique est que le temps reste le même dans
+        tous les systèmes de référence. Changer de référentiel revient donc simplement à un problème
+        de changement de repère de référence. L’étude du mouvement d’un point d’un solide se fait
+        donc toujours en précisant le repère de référence.
+      </div>
+      
+      <h2>Trajectoire d’un point matériel</h2>
+      
+      <div>
+        On appelle trajectoire d’un point mobile \(M\) par rapport à un repère de référence
+        \(R\left(O,\overrightarrow{u_1},\overrightarrow{u_2},\overrightarrow{u_3}\right)\),
+        l’ensemble des points liés à \(R\) avec lesquels le point \(M\) vient en coïncidence au
+        cours de son mouvement par rapport à \(R\).<br/>
+        Cette trajectoire est notée \(\Gamma(M)\). Elle est déterminée en exprimant le vecteur
+        \(\overrightarrow{OM}\) dans le repère \(R\). On obtient ainsi l’équation paramétrique de la
+        trajectoire.
+      </div>
+      
+      <h2>Vitesse d’un point matériel</h2>
+
+      <div>
+        Un même déplacement peut se faire pendant des durées différentes. Le rapport de la distance
+        parcourue \(d\) sur la durée \(\delta t\) mise pour la parcourir appelé vitesse moyenne
+        \(V_m = \frac{d}{\delta t}\) peut caractériser cette différence. Il est plus intéressant de
+        définir la vitesse instantanée (vitesse à un instant \(t\), celle par exemple qui apparaît
+        sur le compteur de vitesse d’un véhicule) qui peut prendre des valeurs très différentes de
+        celle de la vitesse moyenne.
+      </div>
+      
+      <div>
+        Soit un point \(M\) mobile par rapport à un repère
+        \(R\left(O,\overrightarrow{u_1},\overrightarrow{u_2},\overrightarrow{u_3} \right)\).
+      </div>
+      
+      <div>
+        La vitesse instantanée peut se définir comme une vitesse moyenne entre la position
+        \(M_1=M(t)\) du point mobile à la date \(t\) et la position \(M_2=M(t+\delta t)\) de ce même
+        point à la date \(t+\delta t\) où \(\delta t\) représente une durée très faible. Cette
+        vitesse moyenne tend d’autant plus vers la vitesse instantanée à la date \(t\) que la durée
+        \(\delta t\) tend vers zéro.
+        
+        $$ 
+          \overrightarrow{v_{M/R}(t)} = \lim_{\delta t \rightarrow 0} 
+          {\frac{ \overrightarrow{OM(t+\delta t)} - \overrightarrow{OM(t)}}{\delta t}}
+        $$
+        $$ \boxed{ 
+          \overrightarrow{v_{M/R}(t)}
+            =\left.\frac{\mathrm{d}\overrightarrow{OM(t)}}{\mathrm{d}t}\right|_{R} 
+        }$$
+      </div>
+      
+      <div>
+        Le vecteur vitesse est donc la dérivée du vecteur position. La norme du vecteur vitesse, que
+        nous appellerons vitesse, s’exprime, dans le système international, en \(\rm{m.s^{−1}}\).
+      </div>
+
+      <h2>Accélération d’un point matériel</h2>
+
+      <div>
+        Tout comme le vecteur vitesse qui rend compte de la variation du vecteur position par
+        rapport au temps, le vecteur accélération va rendre compte des variations du vecteur vitesse
+        par rapport au temps. Le vecteur accélération correspond donc à la dérivée par rapport au
+        temps du vecteur vitesse c’est-à-dire aussi à la dérivée seconde du vecteur position.
+      </div>
+      
+      <div>
+        L’accélération du point \(M\) par rapport à \(R\) à l’instant \(t\) est&#x202f;:
+        $$ \boxed{
+          \overrightarrow{a_{M/R}(t)}=
+            \left. \frac{  \mathrm{d}  \overrightarrow{ v_{M/R}(t) } }{ \mathrm{d}t } \right| _{ R }
+          = \left. \frac{ \mathrm{d}^2 \overrightarrow{ OM(t) } }{ \mathrm{d}t^2 } \right| _{ R }
+        }$$
+      </div>
+      
+      <div>
+        Le vecteur accélération correspond à la variations du vecteur vitesse par unité de temps.
+        L’accélération s’exprime, dans le système international, en \(\rm{m.s^{−2}}\).
+      </div>
+
+      <h2>Expression en coordonnées cartésiennes</h2>
+      
+      <h3>Système de coordonnées cartésiennes</h3>
+      
+      <h4>Définition</h4>
+      
+      <div>
+        Soit un point fixe \(O\) (appelé origine), et une base orthonormée directe 
+        \( \left( \overrightarrow{u_x}, \overrightarrow{u_y}, \overrightarrow{u_z} \right) \) fixe.
+      </div>
+      
+      <figure>
+        <img src="cartesien.png">
+        <figcaption>schéma coordonnées cartésiennes</figcaption>
+      </figure>
+      
+      <h4>Dérivées temporelles par rapport au repère 
+        \(\left( O, \overrightarrow{u_x}, \overrightarrow{u_y}, \overrightarrow{u_z} \right) \)
+      </h4>
+
+      <div>
+        Les vecteurs \(\overrightarrow{u_x}\), \(\overrightarrow{u_y}\) et \(\overrightarrow{u_z}\)
+        étant fixes dans le repère de référence \( \left( O, \overrightarrow{u_x},
+        \overrightarrow{u_y}, \overrightarrow{u_z} \right) \), leur dérivée par rapport au temps est
+        nulle.
+      </div>
+
+      <h3>Position</h3>
+      
+      <div>
+        Dans ce système de cordonnée, le vecteur \( \overrightarrow{ OM } \) s’exprime de la
+        façon suivante&#x202f;:
+        $$ 
+          \overrightarrow{ OM } = x\overrightarrow{ u_x } + y\overrightarrow{ u_y } 
+                      + z\overrightarrow{ u_z }
+        $$
+        L’abscisse \(x\), l’ordonnée \(y\) et la cote \(z\) sont les coordonnées cartésiennes du
+        point \(M\).
+      </div>
+      
+      <h3>Vitesse</h3>
+      
+      <div>
+        La vitesse du point \(M\) par rapport à \(R\) est&#x202f;:
+        $$ \begin{align}
+           \overrightarrow{v_{M/R}(t)} & = 
+                  { \left. \frac{ \mathrm{d} \overrightarrow{OM} }{ \mathrm{d}t } \right| }_{ R } \\
+          & = { \left. \frac{\mathrm{d}}{\mathrm{d}t}
+              \left( 
+                x\overrightarrow{u_x} +y\overrightarrow{u_y} +z\overrightarrow{u_z}
+              \right)\right| }_{ R } \\
+          
+          & = \frac{\mathrm{d}x}{\mathrm{d}t}\overrightarrow{u_x} 
+            + x {\left.\frac{\mathrm{d}\overrightarrow{u_x}}{\mathrm{d}t}\right|}_{R}
+            +\frac{dy}{dt}\overrightarrow{u_y} 
+            + y {\left.\frac{\mathrm{d}\overrightarrow{u_y}}{\mathrm{d}t}\right|}_{R}
+            +\frac{dz}{dt}\overrightarrow{u_z} 
+            + z {\left.\frac{\mathrm{d}\overrightarrow{u_z}}{\mathrm{d}t}\right|}_{R}
+        \end{align} $$
+        
+        $$ \boxed{ 
+          \overrightarrow{v_{M/R}(t)} = \dot{x}\overrightarrow{u_x}
+                        + \dot{y}\overrightarrow{u_y} 
+                        + \dot{z}\overrightarrow{u_z} 
+        } $$
+      </div>
+      
+      <h3>Accélération</h3>
+      
+      <div>
+        L’accélération du point \(M\) par rapport à \(R\) est&#x202f;:
+        $$ \begin{align}
+          \overrightarrow { a_{M/R}(t) } & = 
+                 { \left. \frac{ \mathrm{d}\overrightarrow{v_{M/R}}}{\mathrm{d}t} \right| }_{ R } \\
+          & = { \left. \frac{\mathrm{d}}{\mathrm{d}t} \left( 
+                            \dot{x}\overrightarrow{u_x} 
+                          + \dot{y}\overrightarrow{u_y} 
+                          + \dot{z}\overrightarrow{u_z}
+                        \right) 
+            \right| }_{ R }
+        \end{align} $$
+        
+        $$ \boxed{ 
+          \overrightarrow { a_{M/R}(t) } =  \ddot{x}\overrightarrow{u_x} 
+                          + \ddot{y}\overrightarrow{u_y} 
+                          + \ddot{z}\overrightarrow{u_z} 
+        } $$
+      </div>
+
+      <h2>Expression en coordonnées cylindriques</h2>
+      
+      <h3>Système de coordonnées cylindriques</h3>
+      
+      <h4>Définition</h4>
+
+      <div>
+        Soit le repère \( \left( O,\overrightarrow{u_x}, \overrightarrow{u_y},
+        \overrightarrow{u_z} \right) \) précédemment défini.<br/>
+        Soit \(M\) un point que l’on cherche à repérer.<br/>
+        L’axe privilégié du problème est placé suivant \(\left(O,\overrightarrow{u_z}
+        \right)\).<br/>
+        Soit \(H\) le projeté de \(M\) sur le plan \( \left( O,\overrightarrow{u_x},
+        \overrightarrow{u_y} \right) \), et \(Z\) le projeté de M sur l’axe \(\left(O,
+        \overrightarrow{u_z}\right)\).
+      </div>
+
+      <div>
+        Le point \(M\) est repéré par&#x202f;:
+        <ul>
+          <li>\(r\) la distance de \(M\) à l’axe \(\left(O,
+          \overrightarrow{u_z}\right)\), soit la distance \(ZM\)</li>
+          <li>\(\theta\) l’angle \( \left( \overrightarrow{u_x}, \overrightarrow{OH} \right) \)</li>
+          <li>\(z\) la distance \(HM\)</li>
+        </ul>
+      </div>
+      
+      <div>
+        La base locale associée à ce système de coordonnées cylindriques est notée 
+        \( \left( \overrightarrow{ u_r }, \overrightarrow{ u_\theta },
+        \overrightarrow{ u_z } \right) \) avec&#x202f;:
+        <ul>
+          <li>\(\overrightarrow{u_r}=\frac{\overrightarrow{OH}}{OH}\), c’est le vecteur radial</li>
+          <li>\(\overrightarrow{ u_\theta }\) se déduit de \(\overrightarrow{ u_r }\) d’une rotation
+          de \(\frac{\pi}{2}\) autour de \(\left(O,\overrightarrow{ u_z }\right)\), c’est le vecteur
+            orthoradial</li>
+          <li>\(\overrightarrow{ u_z }\) complète le trièdre direct (\(\overrightarrow{ u_z } =
+            \overrightarrow{ u_r } \wedge \overrightarrow{ u_\theta }\))</li>
+        </ul>
+      </div>
+      
+      <figure>
+        <img src="cylindrique.png">
+        <figcaption>schéma coordonnées cylindriques</figcaption>
+      </figure>
+      
+      <h4>Dérivée temporelle du vecteur \(\overrightarrow{ u_r }\) mobile dans \(R\)</h4>
+      
+      <div>
+      $$ \begin{align}
+        { \left. \frac{ \mathrm{d}\overrightarrow{u_r} }{ \mathrm{d}t } \right | }_{R}
+        & = { \left.  \frac{\mathrm{d}}{\mathrm{d}t}\left( \cos(\theta) \overrightarrow{ u_x }
+          + \sin(\theta) \overrightarrow{ u_y }\right) \right| }_{R} \\
+        
+        & = \frac{\mathrm{d}\cos(\theta)}{\mathrm{d}t}\overrightarrow{ u_x } 
+          + \cos(\theta) \left. \frac{\mathrm{d}\overrightarrow{ u_x }}{\mathrm{d}t}\right |_{R}
+          + \frac{\mathrm{d}\sin(\theta)}{\mathrm{d}t}\overrightarrow{ u_y }
+          + \sin(\theta) \left. \frac{\mathrm{d}\overrightarrow{ u_y }}{\mathrm{d}t}\right |_{R} \\
+        
+        & = -\dot{\theta}\sin(\theta) \overrightarrow{ u_x }
+          + \dot{\theta}\cos(\theta) \overrightarrow{ u_y } \\
+        
+        & = \dot{\theta}\overrightarrow{ u_\theta } \\
+      \end{align}
+      $$
+      </div>
+      
+      <h4>Dérivée temporelle du vecteur \(\overrightarrow{ u_\theta }\) mobile dans \(R\)</h4>
+      
+      <div>
+      $$ \begin{align}
+        { \left. \frac{ \mathrm{d} \overrightarrow{ u_\theta } }{ \mathrm{d}t } \right | }_{R}
+        & = { \left. \frac{\mathrm{d}}{\mathrm{d}t} \left( -\sin(\theta)\overrightarrow{u_x}
+          + \cos(\theta)\overrightarrow{u_y} \right) \right| }_{R} \\
+        
+        & = -\dot{\theta}\cos(\theta) \overrightarrow{ u_x }
+          - \dot{\theta}\sin(\theta) \overrightarrow{ u_y } \\
+        
+        & = -\dot{\theta}\overrightarrow{u_r}
+      \end{align} $$
+      </div>
+      
+      <h3>Position</h3>
+      
+      <div>
+        Dans ce système de cordonnée, le vecteur \( \overrightarrow{ OM } \) s’exprime de la
+        façon suivante&#x202f;:
+        $$ 
+          \overrightarrow{ OM } = r\overrightarrow{ u_r } +  z\overrightarrow{ u_z }
+        $$
+      </div>
+      
+      <h3>Vitesse</h3>
+      
+      <div>
+        La vitesse du point \(M\) par rapport à \(R\) est&#x202f;:
+        $$ \begin{align}
+           \overrightarrow{v_{M/R}(t)} & = 
+              \left. \frac{ \mathrm{d} \overrightarrow{ OM } }{\mathrm{d}t} \right|_{ R } \\
+          
+          & = {\left. \frac{\mathrm{d}}{\mathrm{d}t} \left(
+                          r\overrightarrow{ u_r } +  z\overrightarrow{ u_z } 
+                       \right)
+             \right|}_{ R }\\
+          
+          & = \frac{\mathrm{d}r}{\mathrm{d}t}\overrightarrow{ u_r } 
+          + r { \left. \frac{\mathrm{d}\overrightarrow{ u_r }}{\mathrm{d}t} \right| }_{ R } 
+          + \frac{\mathrm{d}z}{\mathrm{d}t}\overrightarrow{ u_z } 
+          + z { \left. \frac{\mathrm{d}\overrightarrow{ u_z }}{\mathrm{d}t} \right| }_{ R }
+        \end{align} $$  
+        
+        $$ \boxed{ 
+         \overrightarrow{v_{M/R}(t)} =  \dot{r}\overrightarrow{ u_r } 
+         + r\dot{\theta}\overrightarrow{ u_\theta } 
+         + \dot{z}\overrightarrow{ u_z }
+        }$$
+      </div>
+
+      <h3>Accélération</h3>
+      
+      <div>
+        L’accélération du point \(M\) par rapport à \(R\) est&#x202f;:
+        $$ \begin{align}
+          \overrightarrow { a_{M/R}(t) } & = 
+            \left. \frac{ \mathrm{d}\overrightarrow{ v_{M/R} } }{\mathrm{d}t} \right|_{ R } \\
+          
+          & = { \left. \frac{\mathrm{d}}{\mathrm{d}t} \left( 
+                          \dot{r}\overrightarrow{ u_r } 
+                          + r\dot{\theta}\overrightarrow{ u_\theta } 
+                          + \dot{z}\overrightarrow{ u_z } 
+                        \right)
+              \right| }_{ R } \\
+          
+          & = \ddot{r}\overrightarrow{ u_r } 
+            + \dot{r} {\left. \frac{\mathrm{d}\overrightarrow{ u_r }}{\mathrm{d}t} \right|}_{R}
+            + \dot{r}\dot{\theta}\overrightarrow{ u_\theta } 
+            + r\ddot{\theta}\overrightarrow{ u_\theta } 
+            + r\dot{\theta} \left.\frac{\mathrm{d}\overrightarrow{u_\theta}}{\mathrm{d}t}\right|_{R}
+            + \ddot{z}\overrightarrow{ u_z } 
+            + \dot{z} {\left. \frac{\mathrm{d}\overrightarrow{ u_z }}{\mathrm{d}t} \right|}_{R} \\
+            
+          & = \ddot{r}\overrightarrow{ u_r } 
+            + \dot{r}\dot{\theta}\overrightarrow{ u_\theta }  
+            + \dot{r}\dot{\theta}\overrightarrow{ u_\theta } 
+            + r\ddot{\theta}\overrightarrow{ u_\theta }
+            - r\dot{\theta}\dot{\theta}\overrightarrow{ u_r }
+            + \ddot{z}\overrightarrow{ u_z }
+        \end{align} $$
+        
+        $$ \boxed{
+          \overrightarrow { a_{M/R}(t) } = 
+            \left( \ddot{r} - r\dot{\theta}^2  \right) \overrightarrow{u_r} 
+            + \left(2\dot{r}\dot{\theta}+r\ddot{\theta}\right) \overrightarrow{u_\theta} 
+            + \ddot{z}\overrightarrow{u_z} 
+        }$$
+      </div>
+      
+      <h2>Expression en coordonnées sphériques</h2>
+      
+      <h3>Système de coordonnées sphériques</h3>
+      
+      <h4>Définition</h4>
+      
+      <div>
+        Soit le repère \( R= \left( O,\overrightarrow{u_x}, \overrightarrow{u_y},
+        \overrightarrow{u_z} \right) \) précédemment défini.<br/>
+        Soit \(M\) un point que l’on cherche à repérer.<br/>
+        Soit \(H\) le projeté de \(M\) sur le plan \( \left( O,\overrightarrow{ u_x },
+        \overrightarrow{ u_y } \right) \).
+      </div>
+      
+      <div>
+        Le point \(M\) est repéré par&#x202f;:
+        <ul>
+          <li>\(r\) la distance de \(M\) au point \(O\)</li>
+          <li>\(\theta\) l’angle \( \left(\overrightarrow{u_z}, \overrightarrow{OM}\right) \)</li>
+          <li>\(\varphi\) l’angle \( \left(\overrightarrow{u_x}, \overrightarrow{OH}\right) \)</li>
+        </ul>
+      </div>
+      
+      <div>
+        La base locale associée à ce système de coordonnées sphériques est notée 
+        \( \left( \overrightarrow{ u_r }, \overrightarrow{ u_\theta },
+        \overrightarrow{ u_\varphi } \right) \) avec&#x202f;:
+        <ul>
+          <li>\(\overrightarrow{u_r}= \frac{\overrightarrow{OM}}{OM}\), c’est le vecteur radial</li>
+          <li>\(\overrightarrow{ u_\theta }\) est alors un vecteur du plan vectoriel
+            \( \left(\overrightarrow{ u_z },\overrightarrow{ u_r }\right) \) et se déduit de
+            \(\overrightarrow{ u_r }\) d’une rotation de \(\frac{\pi}{2}\), c’est le vecteur
+            orthoradial</li>
+          <li>\(\overrightarrow{ u_\varphi }\) complète le trièdre direct 
+            (\(\overrightarrow{ u_\varphi } = \overrightarrow{ u_r } \wedge
+            \overrightarrow{ u_\theta }\)). C’est un vecteur du plan vectoriel
+            \( \left(\overrightarrow{ u_x },\overrightarrow{ u_y }\right) \) car il est
+            orthogonal à \( \overrightarrow{ u_z } \)</li>
+        </ul> 
+      </div>
+      
+      <figure>
+        <img src="spherique.png">
+        <figcaption>schéma coordonnées sphériques</figcaption>
+      </figure>
+      
+      <h4>Projection des vecteurs mobiles dans le repère
+        \( R = \left(  
+        O, \overrightarrow{u_x}, \overrightarrow{u_y}, \overrightarrow{u_z}
+        \right) \)
+      </h4>
+      
+      <div>
+        Exprimons les vecteurs \(\overrightarrow{ u_r }\), \(\overrightarrow{ u_\theta }\)
+        et \(\overrightarrow{ u_\varphi }\) dans le repère \( \left( O,
+        \overrightarrow{ u_x }, \overrightarrow{ u_y }, \overrightarrow{ u_z } \right) \).
+      </div>
+      
+      <div>
+        Soit \(H\) la projection de \(M\) sur le plan \( \left( O, \overrightarrow{ u_x },
+        \overrightarrow{ u_y } \right) \).<br/>
+        Le vecteur unitaire \(\overrightarrow{ u } \) suivant la droite \((OH)\) a pour
+        expression&#x202f;:<br/>
+        $$
+        \overrightarrow{u} = \cos(\varphi)\overrightarrow{u_x} 
+        + \sin(\varphi)\overrightarrow{u_y}
+        $$
+        Le vecteur \(\overrightarrow{u_\varphi}\) est directement perpendiculaire à
+        \(\overrightarrow{ u }\) et s’écrit donc&#x202f;:<br/>
+        $$
+          \overrightarrow{ u_\varphi } = -\sin(\varphi)\overrightarrow{u_x} 
+                           +\cos(\varphi)\overrightarrow{u_y}
+        $$
+      </div>
+      
+      <div>
+        On peut en déduire l’expression du vecteur \(\overrightarrow{u_r}\)&#x202f;:<br/>
+        $$ \begin{align}
+        
+          \overrightarrow{ u_r } & = \sin(\theta)\overrightarrow{u} 
+                       + \cos(\theta)\overrightarrow{ u_z } \\
+                       
+          & = \sin(\theta)\times\left( \cos(\varphi)\overrightarrow{u_x} 
+            + \sin(\varphi)\overrightarrow{u_y} \right)
+            + \cos(\theta)\overrightarrow{u_z} \\
+          
+          & = \sin(\theta)cos(\varphi)\overrightarrow{u_x} 
+            + \sin(\theta)\sin(\varphi)\overrightarrow{u_y}
+            + \cos(\theta)\overrightarrow{u_z}
+            
+        \end{align} $$
+      </div>
+      
+      <div>
+        Enfin le vecteur \(\overrightarrow{u_\theta}\) est directement perpendiculaire à
+        \(\overrightarrow{ u_r }\) et s’écrit donc&#x202f;:
+        $$ \begin{align}
+          \overrightarrow{u_\theta} & = \cos(\theta)\overrightarrow{ u }
+                        - \sin(\theta)\overrightarrow{ u_z } \\
+          & = \cos(\theta)\times\left( \cos(\varphi)\overrightarrow{ u_x } 
+                         + \sin(\varphi)\overrightarrow{ u_y } \right ) 
+                      - \sin(\theta)\overrightarrow{ u_z } \\
+          & = \cos(\theta) \cos(\varphi) \overrightarrow{ u_x }
+            + \cos(\theta) \sin(\varphi) \overrightarrow{ u_y }
+            - \sin(\theta) \overrightarrow{ u_z }
+        \end{align} $$
+      </div>
+
+      <h4>Dérivée temporelle du vecteur \( \overrightarrow{ u_r } \) mobile dans \(R\)</h4>
+      
+      <div>
+      $$ \begin{align}
+        { \left.\frac{\mathrm{d}\overrightarrow{ u_r }}{\mathrm{d}t} \right| }_{ R } & =
+        
+        { \left. \frac{\mathrm{d}}{\mathrm{d}t} \left( \sin(\theta)cos(\varphi)\overrightarrow{u_x} 
+        + \sin(\theta)\sin(\varphi)\overrightarrow{ u_y } 
+        + \cos(\theta)\overrightarrow{ u_z } \right) \right| }_{ R } \\
+        
+        & = \left( \dot{\theta}\cos(\theta)cos(\varphi)
+             - \dot{\varphi}\sin(\theta)sin(\varphi) \right) \overrightarrow{ u_x } \\
+        & \quad  + \left( \dot{\theta}\cos(\theta)\sin(\varphi)
+             + \dot{\varphi}\sin(\theta)\cos(\varphi) \right)\overrightarrow{ u_y } \\
+        & \quad - \dot{\theta}\sin(\theta)\overrightarrow{ u_z } \\
+          
+        & = \dot{\theta}\left( \cos(\theta)cos(\varphi)\overrightarrow{ u_x }
+          + \cos(\theta)\sin(\varphi) \overrightarrow{ u_y } 
+          - \sin(\theta)\overrightarrow{ u_z } \right) \\
+        & \quad + \dot{\varphi}\left(-\sin(\theta)sin(\varphi) \overrightarrow{ u_x }
+                       +\sin(\theta)\cos(\varphi)\overrightarrow{ u_y }\right)\\
+          
+        & = \dot{\theta}\left( \cos(\theta)cos(\varphi)\overrightarrow{ u_x }
+            + \cos(\theta)\sin(\varphi) \overrightarrow{ u_y } 
+            - \sin(\theta)\overrightarrow{ u_z } \right) \\
+        & \quad + \dot{\varphi}\sin(\theta)\left(-sin(\varphi) \overrightarrow{ u_x }
+                          + \cos(\varphi)\overrightarrow{ u_y } \right) \\
+          
+        & =  \dot{\theta}\overrightarrow{ u_\theta }
+           + \dot{\varphi}\sin{\theta}\overrightarrow{ u_\varphi }
+      \end{align} $$
+      </div>
+      
+      <h4>Dérivée temporelle du vecteur \(\overrightarrow{u_\theta}\) mobile dans \(R\)</h4>
+      
+      <div>
+        $$ \begin{align}
+          { \left.\frac{\mathrm{d}\overrightarrow{ u_\theta }}{\mathrm{d}t} \right| }_{ R } & =
+          
+          { \left. \frac{\mathrm{d}}{\mathrm{d}t} \left(
+          \cos(\theta)cos(\varphi)\overrightarrow{ u_x } 
+          + \cos(\theta)\sin(\varphi)\overrightarrow{ u_y }
+          - \sin(\theta)\overrightarrow{ u_z }
+          \right) \right| }_{R} \\
+          
+          & = \left( -\dot{\theta}\sin(\theta)cos(\varphi) 
+              - \dot{\varphi}\cos(\theta)sin(\varphi) \right)\overrightarrow{ u_x } \\
+          & \quad + \left( -\dot{\theta}\sin(\theta)sin(\varphi)
+              + \dot{\varphi}\cos(\theta)cos(\varphi) \right)\overrightarrow{ u_y } \\
+          & \quad - \left( \dot{\theta}\cos(\theta) \right)\overrightarrow{ u_z } \\
+            
+          & = - \dot{\theta}\left( 
+              \sin(\theta)cos(\varphi)\overrightarrow{ u_x } 
+              + \sin(\theta)sin(\varphi)\overrightarrow{ u_y } 
+              + \cos(\theta)\overrightarrow{ u_z } \right) \\
+           & \quad + \dot{\varphi}\cos(\theta)\left( 
+              -sin(\varphi)\overrightarrow{ u_x }
+              + cos(\varphi)\overrightarrow{ u_y } \right) \\
+              
+          & = - \dot{\theta}\overrightarrow{ u_r }
+            + \dot{\varphi}\cos(\theta)\overrightarrow{ u_\varphi }
+        \end{align} $$
+      </div>
+      
+      <h4>Dérivée temporelle du vecteur \(\overrightarrow{u_\varphi}\) mobile dans \(R\)</h4>
+      
+      <div>
+        $$ \begin{align}
+          { \left.\frac{\mathrm{d}\overrightarrow{ u_\varphi }}{\mathrm{d}t} \right| }_{ R } & = 
+          { \left. \frac{\mathrm{d}}{\mathrm{d}t} \left(
+          -\sin(\varphi)\overrightarrow{ u_x } + \cos(\varphi)\overrightarrow{ u_y }
+          \right) \right| }_{R} \\
+          & = -\dot{\varphi}\cos(\varphi)\overrightarrow{ u_x } 
+            -\dot{\varphi}\sin(\varphi)\overrightarrow{ u_y }
+        \end{align} $$
+      </div>
+      
+      <div>
+        Calculons l’expression suivante&#x202f;:
+        $$ \begin{align}
+          \sin(\theta)\overrightarrow{ u_r } + \cos(\theta)\overrightarrow{ u_\theta } & = 
+          \left(\sin(\theta)^2\cos(\varphi)
+                    +\cos(\theta)^2\cos(\varphi)\right)\overrightarrow{ u_x } \\
+            
+          & \quad + \left(\sin(\theta)^2\sin(\varphi)
+                    +\cos(\theta)^2\sin(\varphi)\right)\overrightarrow{ u_y } \\
+          
+          & = \cos(\varphi)\overrightarrow{ u_x } + \sin(\varphi)\overrightarrow{ u_y }
+          
+        \end{align} $$
+      </div>
+      
+      <div>
+        D’où&#x202f;:
+        $$ { \left.\frac{\mathrm{d}\overrightarrow{ u_\varphi }}{\mathrm{d}t} \right| }_{ R } =
+          -\dot{\varphi}\sin(\theta)\overrightarrow{ u_r }
+          - \dot{\varphi}\cos(\theta)\overrightarrow{ u_\theta } $$
+      </div>
+      
+      <h3>Position</h3>
+
+      <div>
+        Le vecteur position se note&#x202f;:
+        $$ \overrightarrow{ OM } = r\overrightarrow{ u_r }$$
+        Le rayon \(r\), la colatitude \(\theta\) et l’azimut \(\varphi\) sont les
+        coordonnées sphériques du point \(M\).
+      </div>
+
+      <div>
+        La position de chaque point doit être définie par un unique triplet
+        \( \left( r,\theta,\varphi \right) \). \(r\) ne varie donc que de \(0\) à
+        \(\infty \), \(\theta\) varie de \(0\) à \(\pi\) et \(\varphi\) varie de \(0 \) à
+        \(2\pi \).
+      </div>
+
+      <h3>Vitesse</h3>
+      
+      <div>
+        La vitesse du point \(M\) par rapport à \(R\) est&#x202f;:
+        $$ \begin{align}
+          \overrightarrow{v_{M/R}(t)} & = 
+                  { \left. \frac{ \mathrm{d} \overrightarrow{ OM } }{ \mathrm{d}t } \right| }_{R} \\
+          
+          & = \left.\frac{\mathrm{d}\left(r\overrightarrow{u_r}\right)}{\mathrm{d}t} \right|_{R} \\
+          
+          & = \frac{\mathrm{d}r}{\mathrm{d}t}\overrightarrow{u_r} 
+            + r{ \left.\frac{\mathrm{d}\overrightarrow{u_r}}{\mathrm{d}t} \right| }_{R}
+        \end{align} $$  
+        $$\boxed{
+          \overrightarrow{v_{M/R}(t)} = \dot{r} \overrightarrow{u_r} 
+          + r\dot{\theta}\overrightarrow{u_\theta} 
+          + r\sin(\theta)\dot{\varphi}\overrightarrow{u_\varphi}
+        } $$
+      </div>
+
+      <h3>Accélération</h3>
+      
+      <div>
+        L’accélération du point \(M\) par rapport à \(R\) est&#x202f;:
+        $$ \begin{align}
+          \overrightarrow{a_{M/R}(t)} & = 
+                      {\left.\frac{\mathrm{d}\overrightarrow{v_{M/R}}}{\mathrm{d}t}\right|}_{R}\\
+          
+          & = { \left. \frac{\mathrm{d}}{\mathrm{d}t} \left( 
+              \dot{r} \overrightarrow{u_r} 
+              + r\dot{\theta}\overrightarrow{u_\theta} 
+              + r\sin(\theta)\dot{\varphi}\overrightarrow{u_\varphi}
+            \right) \right| }_{ R } \\
+            
+          & = \ddot{r}\overrightarrow{u_r} 
+            + \dot{r}{\left.\frac{\mathrm{d}\overrightarrow{u_r}}{\mathrm{d}t}\right|}_{R}
+            + \dot{r}\dot{\theta}\overrightarrow{u_\theta} 
+            + r\ddot{\theta}\overrightarrow{u_\theta} 
+            + r\dot{\theta}\left.\frac{\mathrm{d}\overrightarrow{u_\theta} }{\mathrm{d}t}\right|_{R}
+            + \dot{r}\sin(\theta)\dot{\varphi}\overrightarrow{u_\varphi}
+            + r\dot{\theta}\cos(\theta)\dot{\varphi}\overrightarrow{u_\varphi} \\
+          & + r\sin(\theta)\ddot{\varphi}\overrightarrow{u_\varphi}
+            + r\sin(\theta)\dot{\varphi}
+              \left.\frac{\mathrm{d}\overrightarrow{u_\varphi}}{\mathrm{d}t}\right|_{R} \\
+
+          & = \ddot{r}\overrightarrow{u_r}
+            + \dot{r}\left(\dot{\theta}\overrightarrow{ u_\theta } 
+                    + \dot{\varphi}\sin{\theta}\overrightarrow{ u_\varphi }\right)
+            + \dot{r}\dot{\theta}\overrightarrow{u_\theta} 
+            + r\ddot{\theta}\overrightarrow{u_\theta} 
+            + r\dot{\theta}\left(- \dot{\theta}\overrightarrow{ u_r } 
+                    + \dot{\varphi}\cos(\theta)\overrightarrow{ u_\varphi }\right) \\
+          & + \dot{r}\sin(\theta)\dot{\varphi}\overrightarrow{u_\varphi} 
+            + r\dot{\theta}\cos(\theta)\dot{\varphi}\overrightarrow{u_\varphi}
+            + r\sin(\theta)\ddot{\varphi}\overrightarrow{u_\varphi} \\
+          & + r\sin(\theta)\dot{\varphi}
+               \left(-\dot{\varphi}\sin(\theta)\overrightarrow{u_r} 
+                    -\dot{\varphi}\cos(\theta)\overrightarrow{ u_\theta }\right)
+        \end{align} $$
+      
+        $$ \boxed{ \begin{align}
+          \overrightarrow{a_{M/R}(t)} & =
+            \left(
+              \ddot{r}
+              - r\dot{\theta}^2
+              - r \sin^2(\theta)\dot{\varphi}^2
+            \right)
+            \overrightarrow{u_r} \\
+          & + \left(
+              2\dot{r}\dot{\theta}
+              + r\ddot{\theta} 
+              - r\dot{\varphi}^2\sin(\theta)\cos(\theta)
+            \right)
+            \overrightarrow{ u_\theta } \\
+          & + \left(
+              2\dot{r}\dot{\varphi}\sin(\theta) 
+              + 2r\dot{\theta}\dot{\varphi}\cos(\theta) 
+              + r\sin(\theta)\ddot{\varphi}
+            \right)
+            \overrightarrow{ u_\varphi } 
+        \end{align} } $$
+      </div>
+
+      <h2 id="base_Frenet">Expression dans la base de Frenet</h2>
+      
+      <h3>Repère de Frenet</h3>
+      
+      <h4>Définition</h4>
+      
+      <div>
+        Soit un point \(M\) mobile par rapport à un repère \(R\left(O,\overrightarrow{u_1},
+        \overrightarrow{u_2},\overrightarrow{u_3}\right)\).<br />
+        Soit \(\Gamma(M)\) la trajectoire de  \(M\) par rapport à \(R\).
+      </div>
+      
+      <div>
+        On définit&#x202f;:
+        <ul>
+          <li>une orientation de \(\Gamma(M)\)</li>
+          <li>une abscisse curviligne \(s\) à partir d’une origine arbitraire \(M_0\)</li>
+          <li>\(\vec{t}(s)\) le vecteur unitaire tangent en \(M\) à \(\Gamma(M)\)</li>
+        </ul>
+        Le plan osculateur en \(M\) est la limite du plan 
+        \(\left(\vec{t_1},\vec{t_2}\right)\) lorsque \(s_2\) tend vers \(s_1\).
+      </div>
+      
+      <div>
+        On définit alors le repère de Frenet \(\left(M,\vec{t},\vec{n},\vec{z}\right)\) 
+        avec&#x202f;:
+        <ul>
+          <li>\(\vec{t}(s)\) vecteur unitaire tangent à la trajectoire en \(M\) et de même sens que
+            le mouvement</li>
+          <li>\(\vec{n}(s)\) normale principale en \(M\) à \(\Gamma(M)\) appartenant au plan
+            osculateur et dirigé vers le centre de la courbure</li>
+          <li>\(\vec{z}(s) =\vec{t}(s) \wedge \vec{n}(s)\)</li>
+        </ul>
+      </div>
+      
+      <div>
+        On définit aussi le cercle de courbure ou cercle osculateur à la courbe en \(M\), le cercle
+        de centre \(C\) et de rayon \(\rho\) tangent à \(\Gamma\) en \(M\) tel que
+        \(\overrightarrow{MC} = \rho \vec{n}\).
+      </div>
+      
+      <figure>
+        <img src="frenet.png">
+        <figcaption>Repère de Frenet.</figcaption>
+      </figure>
+      
+      <h4>Formules de Frenet</h4>
+      
+      <div>
+        Par définition, on a&#x202f;:
+        $$ 
+          \boxed{ \vec{t}(s)=\left.\frac{\mathrm{d}\overrightarrow{OM}(s)}{\mathrm{d}s}\right|_{R} }
+        $$
+      </div>
+      
+      <div>
+        De plus si on définit \(\alpha\) comme étant l’angle polaire au point \(M\) on a&#x202f;:
+        $$
+           \frac{\mathrm{d}\vec{t}}{\mathrm{d}t} =
+            \frac{\mathrm{d}\vec{t}}{\mathrm{d}\alpha} \times 
+            \frac{\mathrm{d}\alpha}{\mathrm{d}s} \times 
+            \frac{\mathrm{d}s}{\mathrm{d}t}
+        $$
+        Et comme \(\mathrm{d}s = \rho\mathrm{d}\alpha\) et
+        \(\frac{\mathrm{d}\vec{t}}{\mathrm{d}\alpha} = \vec{n}\) on a&#x202f;:
+        $$
+          \frac{\mathrm{d}\vec{t}}{\mathrm{d}t} = \vec{n} \times \frac{1}{\rho}
+          \times \frac{\mathrm{d}s}{\mathrm{d}t}
+        $$
+        Soit au final&#x202f;:
+        $$
+          \boxed{ \frac{\vec{n}(s)}{\rho} = \left. \frac{\mathrm{d}\vec{t}}{\mathrm{d}s} \right|_{R} }
+        $$
+      </div>
+      
+      <h3>Vitesse</h3>
+      
+      <div>
+        L’expression du vecteur vitesse dans le repère de Frenet devient&#x202f;:
+        $$ \begin{align}
+          \overrightarrow{v_{M/R}(t)} & = 
+          \left. \frac{ \mathrm{d}\overrightarrow{OM(t)} }{\mathrm{d}t}  \right| _{ R } \\
+           & = \frac{ \mathrm{d} \overrightarrow{OM}}{ds} \cdot \frac{\mathrm{d}s}{\mathrm{d}t}
+          \end{align} 
+        $$
+        $$
+          \boxed{ \overrightarrow{v_{M/R}(t)} = \dot{s}\vec{t} }
+        $$
+      </div>
+      
+      <div>
+        On en déduit que la vitesse d’un point est colinéaire à la tangente à sa trajectoire.
+      </div>
+      
+      <h3>Accélération</h3>
+      
+      <div>
+        L’expression du vecteur accélération dans le repère de Frenet devient&#x202f;:
+        $$ \begin{align}
+          \overrightarrow{a_{M/R}(t)} & = 
+          \left. \frac{ \mathrm{d}\overrightarrow {v_{M/R}(t)} }{ \mathrm{d}t } \right| _{R} \\
+          & = \frac { \mathrm{d}\dot { s } \vec { t } }{ \mathrm{d}t } \\
+          & = \ddot{s} \vec{t} + \dot{s} \frac{ \mathrm{d} \vec{t} }{ \mathrm{d}t } \\
+          & = \ddot{s} \vec{t} + \dot{s} \frac{ \mathrm{d} \vec{t} }{ \mathrm{d}s }  
+                                     \times \frac{ \mathrm{d}s }{ \mathrm{d}t }
+          \end{align}
+        $$
+        $$
+          \boxed{ \overrightarrow{a_{M/R}(t)} = \ddot{s}\vec{t} + \frac{\dot{s}^2}{\rho}\vec{n} }
+        $$
+      </div>
+      
+      <div>
+        On en déduit que l’accélération d’un point appartient au plan osculateur et est dirigée vers
+        la concavité de sa trajectoire.
+      </div>
+
+    </section>
+  </body>
+</html>
