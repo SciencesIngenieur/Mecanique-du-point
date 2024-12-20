@@ -1,0 +1,279 @@
+/**************************************************************************************************\
+Mise en page
+\**************************************************************************************************/
+
+body{
+  background: #222222;
+  counter-reset: indice_figure;
+  margin: 0;
+  padding: 0;
+  --marge-gauche: 1.5cm;
+  --marge-droite: 1.5cm;
+  --largeur-page: 20cm;
+}
+
+h1{
+  color: black;
+  font-family: "Times New Roman", serif;
+  font-weight: normal;
+  text-align: center;
+  margin-top: 0.5cm;
+  margin-left: var(--marge-gauche);
+  margin-right: var(--marge-droite);
+  padding: 0.1cm;
+  border: solid 2px black;
+}
+
+section{
+  width: var(--largeur-page);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1cm;
+  padding-bottom: 2cm;
+  background: #FFFFFF;
+  counter-reset: titre_1;
+}
+
+footer{
+  width: var(--largeur-page);
+  margin-top: 0;
+  margin-bottom: 1cm;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 1cm;
+  padding-bottom: 2cm;
+  background: #FFFFFF;
+}
+
+
+/**************************************************************************************************\
+Titres
+\**************************************************************************************************/
+h2{
+  color: black;
+  font-family: "Times New Roman", serif;
+  font-weight: normal;
+  border-bottom: 2px solid black;
+  margin: 16pt var(--marge-droite) 0 var(--marge-gauche);
+  counter-reset: titre_2;
+}
+h2:before {
+  counter-increment: titre_1;
+  content: counter(titre_1)". ";
+}
+h3{
+  color: black;
+  font-family: "Times New Roman", serif;
+  font-weight: normal;
+  border-bottom: 1px solid black;
+  margin: 14pt var(--marge-droite) 0 var(--marge-gauche);
+  counter-reset: titre_3;
+}
+h3:before {
+  counter-increment: titre_2;
+  content: counter(titre_1)"."counter(titre_2)". ";
+}
+h4{
+  color: black;
+  font-family: "Times New Roman", serif;
+  font-weight: normal;
+  border-bottom: 1px solid black;
+  margin: 12pt var(--marge-droite) 0 var(--marge-gauche);
+  counter-reset: titre_4;
+}
+h4:before {
+  counter-increment: titre_3;
+  content: counter(titre_1)"."counter(titre_2)"."counter(titre_3)". ";
+}
+h5{
+  color: black;
+  font-family: "Times New Roman", serif;
+  font-weight: normal;
+  border-bottom: 1px dashed black;
+  margin: 12pt var(--marge-droite) 0 var(--marge-gauche);
+}
+h5:before {
+  counter-increment: titre_4;
+  content: counter(titre_1)"."counter(titre_2)"."counter(titre_3)"."counter(titre_4)". ";
+}
+
+
+/**************************************************************************************************\ 
+Paragraphes
+\**************************************************************************************************/
+div:not(#titre, .MathJax_Display){
+  font-family: "Times New Roman", serif; 
+  text-align: justify;
+  margin-top: 12pt;
+  margin-bottom: 0;
+  margin-left: var(--marge-gauche);
+  margin-right: var(--marge-droite);
+}
+
+/* Énumérations */
+ul{
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+}
+
+ul li{
+  list-style-type: none; /* Suppression du bullet*/
+}
+ul li:before { 
+  content: "\2003\2014\2005"; /* espace cadratin, tiret cadratin, espace normale */
+}
+ul li:not(:has(ul)):after {
+  content: "\202f;";
+}
+ul li:not(:has(ul)):last-child:after {
+  content: ".";
+}
+
+ul li ul {
+  margin: 0;
+  padding: 0;
+}
+ul li ul li:before { 
+  content: "\2003\2003\2014\2005";
+}
+ul li ul li:after {
+  content: ",";
+}
+ul li:not(:last-child) ul li:last-child:after {
+  content: "\202f;";
+}
+
+
+a{
+  color: Black;
+}
+
+/* Exposant */
+sup {
+}
+
+/* Mots étrangers */
+i {
+  font-style: italic;
+}
+
+/* Citations */
+q { 
+  display: inline;
+}
+q:before { 
+  content: "«\2060\2005\2060";
+}
+q:after {
+  content: "\2060\2005\2060»";
+}
+
+/* Modification dans citation */
+span.modif:before {
+  content: "[\2060";
+}
+span.modif:after {
+  content: "\2060]";
+}  
+
+/* Incise */
+span.incise:before {
+  content: "—\2060\2005\2060";
+}
+span.incise:after {
+  content: "\2060\2005\2060—";
+}  
+
+/* Petite capitale */
+span.p_cap{
+  font-variant: small-caps;
+}
+
+
+/**************************************************************************************************\ 
+Images
+\**************************************************************************************************/
+figure{
+  margin-top: 12pt;
+  margin-bottom: 12pt;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width : 100%;
+}
+
+figcaption{
+  text-align: center;
+  font-style: italic;
+}
+
+figcaption:before{ 
+  counter-increment: indice_figure;
+  content: "figure "counter(indice_figure)" : ";
+}
+
+img{
+  margin-top: 0pt;
+  margin-bottom: 0pt;
+  margin-left: 0pt;
+  margin-right: 0pt;
+  padding: 0;
+  /*text-align: center;*/
+  max-width : 18cm;
+}
+
+img.encadree{
+  border: 0.0625em solid Gray;
+  border-radius: 0.1875em;
+}
+
+
+/**************************************************************************************************\
+Relations mathématiques
+\**************************************************************************************************/
+.MathJax_Display {
+  font-family: "Times New Roman", serif; 
+  text-align: left !important;
+}
+
+
+/**************************************************************************************************\
+Tableaux
+\**************************************************************************************************/
+table {
+  /* Coller les bordures */
+  border-collapse: collapse; 
+  
+  /* Centrer les tableaux sur la page */
+  margin-left: auto; 
+  margin-right: auto;
+  
+  /* Séparer d’avec les autres éléments */
+  margin-top: 0.5cm;
+  margin-bottom: 0.5cm;
+  
+  /* Limiter la largeur à la zone d’écriture */
+  max-width : calc( var(--largeur-page) - var(--marge-droite) - var(--marge-gauche) );
+  
+  font-family: "Times New Roman", serif; 
+}
+
+/* Titre du tableau */ 
+caption {
+  text-align: left;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
+}
+
+/* Celulles */
+th, td {
+  border: 1px solid black;
+  text-align: center;
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+}
+
+.justifie { text-align: justify; }
