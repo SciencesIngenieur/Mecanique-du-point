@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Moments</title>
+    <link rel="stylesheet" type="text/css" media="screen" 
+      href="https://sciencesingenieur.github.io/Styles/styles.css"/>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+  </head>
+  <body>
+
+    <section>
+    
+      <h1>Moments</h1>
+
+      <h2>Moment d’une force</h2>
+      
+      <h3>Définitions</h3>
+      
+      <div>
+        Considérons une force \(\overrightarrow{f}\) qui s’applique en un point \(M\).<br />
+        Par définition, le moment de la force \(\overrightarrow{f}\) en un point \(A\) est le
+        vecteur&#x202f;:<br />
+        $$
+          \quad \boxed{ \overrightarrow{\mathcal{M}_A}\left(\overrightarrow{f}\right)
+          \overset{def}{=}\overrightarrow{AM} \wedge \overrightarrow{f} }
+        $$
+      </div>
+      
+      <div>
+        Le moment d’une force s’exprime en \(\rm{N.m}\).
+      </div>
+      
+      <div>
+        On obtient le moment en un point \(A\) à partir de celui calculé en un autre point \(B\) par
+        la relation&#x202f;:<br />
+        $$
+          \quad \boxed{ \overrightarrow{\mathcal{M}_A}\left(\overrightarrow{f}\right)
+          = \overrightarrow{\mathcal{M}_B}\left(\overrightarrow{f}\right)
+          + \overrightarrow{AB} \wedge \overrightarrow{f} }
+        $$
+      </div>
+      
+      <h3>Notion de bras de levier</h3>
+      
+      <div>
+        Il arrive souvent que toutes les forces soient dans un même plan. Dans ce cas, si l’on
+        considère un point \(A\) de ce plan, tous les moments de force en \(A\) sont
+        perpendiculaires à ce plan&#x202f;; il est alors naturel d’utiliser des projections.
+      </div>
+      
+      <div>
+        Soit \(\overrightarrow{u}\) le vecteur unitaire orientant un axe \((\Delta)\) passant par un
+        point \(A\).<br />
+        Par définition, le moment d’une force par rapport à l’axe \((\Delta)\) est le
+        scalaire&#x202f;:<br />
+        $$
+          \quad \boxed{ \mathcal{M}_{\Delta} \left(\overrightarrow{f}\right) \overset{def}{=}
+            \overrightarrow{\mathcal{M}_A}\left(\overrightarrow{f}\right) \cdot \overrightarrow{u} }
+        $$
+      </div>
+      
+      <div>
+        Ce nombre est indépendant de la position de \(A\) sur l’axe. En effet, pour un autre point
+        \(A'\) sur l’axe, on a&#x202f;:<br />
+        $$
+          \quad \overrightarrow{\mathcal{M}_A}\left(\overrightarrow{f}\right)\cdot\overrightarrow{u}
+          = \overrightarrow{\mathcal{M}_{A'}}\left(\overrightarrow{f}\right)\cdot\overrightarrow{u}
+          + \left( \overrightarrow{AA'} \wedge \overrightarrow{f} \right) \cdot \overrightarrow{u}
+          = \overrightarrow{\mathcal{M}_{A'}}\left(\overrightarrow{f}\right)\cdot\overrightarrow{u}
+        $$
+        puisque \(\overrightarrow{AA'}\) est colinéaire à \(\overrightarrow{u}\).
+      </div>
+      
+      <div>
+        Considérons maintenant une force \(\overrightarrow{f}\) dans un plan \(\mathcal{P}\) et un
+        axe orienté \((\Delta)\) perpendiculaire à \(\mathcal{P}\).<br />
+        Par définition, le bras de levier est la distance \(d\) entre la droite d’action de la force
+        et l’axe \((\Delta)\).<br />
+        Montrons que le moment par rapport à l’axe \((\Delta)\) ne dépend que de la force et de son
+        bras de levier&#x202f;:<br />
+        $$
+          \quad \mathcal{M}_{\Delta} \left(\overrightarrow{f}\right)
+          = \left( \overrightarrow{AM} \wedge \overrightarrow{f} \right) \cdot \overrightarrow{u}
+          = AM f \sin \left(  \widehat{\overrightarrow{AM}, \overrightarrow{f} } \right)
+          = \pm f \times d
+        $$
+        On prendra le signe \(+\) lorsque la force tend à faire tourner le point \(M\) autour de
+        l’axe dans le sens positif (associé au sens de \(\overrightarrow{u}\) par la règle du
+        tire-bouchon) et \(-\) dans le cas contraire.
+      </div>
+      
+      <figure>
+        <img src="bras_levier.png">
+        <figcaption>Notion de bras de levier.</figcaption>
+      </figure>
+      
+      <div>
+        <u>Moment d’une force par rapport à un axe \((\Delta)\)&#x202f;:</u><br />
+        Le moment d’une force \(\overrightarrow{f}\) par rapport à un axe orienté \((\Delta)\)
+        perpendiculaire au plan contenant la force vaut&#x202f;:<br />
+        $$
+          \quad \boxed{ \mathcal{M}_{\Delta} \left(\overrightarrow{f}\right) = \pm f \times d }
+        $$
+        où \(d\) est le bras de levier.<br />
+        Ce moment est positif quand la force tend à faire tourner le point \(M\) dans le sens
+        positif&#x202f;; il est négatif dans le cas contraire.
+      </div>
+      
+      <h2>Moment cinétique</h2>
+      
+      <div>
+        Considérons un point matériel \(M\) de masse \(m\), animé d’une vitesse
+        \(\overrightarrow{v_{M/\mathcal{R}}}\) par rapport à un référentiel \(\mathcal{R}\).<br />
+        Par définition, le moment cinétique de \(M\) en un point \(A\) est le vecteur&#x202f;:<br />
+        $$
+          \quad \boxed{ \overrightarrow{L_A}(M) \overset{def}{=}
+            \overrightarrow{AM} \wedge m \overrightarrow{v_{M/\mathcal{R}}}
+            = \overrightarrow{AM} \wedge \overrightarrow{p} }
+        $$
+      </div>
+      
+      <div>
+        Ce vecteur, comme tous les moments, vérifie la relation&#x202f;:<br />
+        $$
+          \quad \overrightarrow{L_A}(M) = \overrightarrow{L_B}(M) + 
+            \overrightarrow{AB} \wedge \overrightarrow{p}
+        $$
+      </div>
+      
+      <div>
+        On définit également le moment cinétique par rapport à un axe.<br />
+        Si \(\overrightarrow{u}\) désigne le vecteur unitaire orientant un axe \((\Delta)\), le
+        moment cinétique d’un point matériel par rapport à cet axe est la projection
+        \(\overrightarrow{L_A}\) sur l’axe&#x202f;:<br />
+        $$
+          \quad \boxed{ L_{\Delta}(M) =
+             \overrightarrow{L_A}(M) \cdot \overrightarrow{u} \quad / A \in (\Delta) }
+        $$
+      </div>
+      
+      <h2>Théorème du moment cinétique</h2>
+      
+      <div>
+        Le théorème du moment cinétique découle directement du principe fondamental de la dynamique
+        et ne possède donc pas plus d’information. Dans le cas des systèmes conservatifs à force
+        centrale, il permet de dégager une seconde intégrale première qui s’interprète de façon
+        géométrique.
+      </div>
+      
+      <div>
+        Considérons un point matériel \(M\) de masse \(m\) en mouvement dans un référentiel galiléen
+        \(\mathcal{R}\) et soumis à une force \(\overrightarrow{f}\).<br />
+        Dérivons le moment cinétique de \(M\) calculé en un point quelconque \(A\)&#x202f;:<br />
+        $$
+          \quad \frac{\mathrm{d}\overrightarrow{L_{A}}(M)}{\mathrm{d}t} = 
+            \frac{\mathrm{d}\overrightarrow{AM}}{\mathrm{d}t}
+              \wedge m \overrightarrow{v_{M/\mathcal{R}}}
+            + \overrightarrow{AM} 
+              \wedge m \frac{\mathrm{d}\overrightarrow{v_{M/\mathcal{R}}}}{\mathrm{d}t}
+        $$
+        Sachant que&#x202f;:<br />
+        $$
+          \quad \frac{\mathrm{d}\overrightarrow{AM}}{\mathrm{d}t} =
+          \overrightarrow{v_{M/\mathcal{R}}} - \overrightarrow{v_{A/\mathcal{R}}}
+        $$
+        Et que d’après le principe fondamental de la dynamique&#x202f;:<br />
+        $$
+          \quad m \frac{\mathrm{d}\overrightarrow{v_{M/\mathcal{R}}}}{\mathrm{d}t}
+            = \overrightarrow{f}
+        $$
+        On obtient&#x202f;:<br />
+        $$
+          \quad \frac{\mathrm{d}\overrightarrow{L_{A}}(M)}{\mathrm{d}t} = 
+            \overrightarrow{AM} \wedge \overrightarrow{f}
+            + m \overrightarrow{v_{M/\mathcal{R}}} \wedge \overrightarrow{v_{A/\mathcal{R}}}
+        $$
+        Lorsque \(A\) est fixe dans \(\mathcal{R}\), le deuxième terme se résume au moment de la
+        force \(\overrightarrow{f}\), ce qui constitue le théorème du moment cinétique.
+      </div>
+      
+      <div>
+        <u>Théorème du moment cinétique (TMC)&#x202f;:</u><br />
+        Dans un référentiel galiléen, un point matériel \(M\) soumis à une résultante de forces
+        \(\overrightarrow{f}\), voit son moment cinétique calculé en un point fixe \(A\), évoluer
+        suivant la relation cause/effet&#x202f;:
+        $$
+          \quad \boxed{ \frac{\mathrm{d}\overrightarrow{L_{A}}(M)}{\mathrm{d}t} = 
+            \overrightarrow{\mathcal{M}_A}\left(\overrightarrow{f}\right) }
+        $$
+      </div>
+      
+      <div>
+        En projetant cette relation suivant un axe fixe orienté \((\Delta)\), on obtient&#x202f;:
+        $$
+          \quad \boxed{ \frac{\mathrm{d}L_{\Delta}(M)}{\mathrm{d}t} = 
+            \mathcal{M}_{\Delta}\left(\overrightarrow{f}\right) }
+        $$
+      </div>
+      
+      <h2>Applications</h2>
+      
+      <h3>Mouvement à forces centrales</h3>
+      
+      <div>
+        Une force est dite centrale de centre \(O\) quand, à chaque instant, la droite support de
+        cette force passe par un point fixe \(O\). Si l’on considère un système de coordonnées
+        sphériques d’origine \(O\), un champ de force centrale s’écrit&#x202f;:<br />
+        $$
+          \quad \overrightarrow{f}(M) = f(r,\theta,\varphi) \overrightarrow{u_r}
+        $$
+      </div>
+      
+      <div>
+        Par exemple, dans le référentiel géocentrique, la force de gravitation produite par la Terre
+        sur un satellite artificiel est une force centrale à condition de supposer la Terre à
+        symétrie sphérique.
+      </div>
+      
+      <div>
+        Le théorème du moment cinétique appliqué à point matériel \(M\) soumis à une force centrale
+        dans un référentiel galiléen donne&#x202f;:<br />
+        $$
+          \quad \frac{\mathrm{d} \overrightarrow{L_{O}}(M)}{\mathrm{d}t} = 
+            r \overrightarrow{u_r} \wedge f(r,\theta,\varphi) \overrightarrow{u_r}
+            \quad \Rightarrow \quad \overrightarrow{L_{O}}(M) = C^{te}
+        $$  
+      </div>
+      
+      <div>
+        Ainsi, le moment cinétique se conserve en norme et en direction d’où l’on tire les trois
+        conséquences suivantes&#x202f;:<br />
+        <ol>
+          <li>Le mouvement est plan. En effet, à chaque instant, le vecteur
+          \(\overrightarrow{OM}\) est orthogonal au vecteur constant
+          \(\overrightarrow{L_{O}}(M)\).</li>
+          <li>Le mouvement étant plan, on utilise les coordonnées polaires pour repérer la position
+          de \(M\). Le moment cinétique s’écrit \(r \overrightarrow{u_r} \wedge m 
+          (\dot r \overrightarrow{u_r} + r \dot \theta \overrightarrow{u_\theta})\) et sa
+          conservation se traduit par
+          $$
+            \quad \boxed{ r^2 \dot \theta = C}
+          $$
+          où \(C\) est une constante appelée constante des aires.</li>
+          <li>L’aire balayée par le vecteur \(\overrightarrow{OM}\) par unité de temps est constante
+          et égale à \(C/2\) (vitesse aréolaire).<br />
+          On retrouve ici la loi des aires énoncée par Kepler au sujet des astres du système
+          solaire. On voit ici que cette propriété n’est pas limitée aux forces de gravitation mais
+          propre à toutes les forces centrales.</li>
+        </ol>
+      </div>
+      
+      <figure>
+        <img src="loi_aires.png">
+        <figcaption>Loi des aires&#x202f;: pour des durées égales, l’aire balayée par le rayon
+        vecteur est la même.</figcaption>
+      </figure>
+      
+      <h3>Solide en équilibre</h3>
+      
+      <div>
+        Considérons un solide \(\mathcal{S}\) en équilibre dans un référentiel \(\mathcal{R}\)
+        galiléen.<br />
+        Étant au repos, le système ne possède ni quantité de mouvement, ni moment cinétique. Par
+        conséquent,
+        $$
+          \quad \left\{ \begin{aligned}
+            \overrightarrow{F^{ext}} & = \overrightarrow{0} \\
+            \overrightarrow{{M_A}^{ext}} & = \overrightarrow{0} \quad \forall A
+          \end{aligned} \right.
+        $$
+      </div>
+      
+      <div>
+        Dans le cas où seules deux forces s’appliquent en deux points \(A\) et \(B\) d’un solide, la
+        condition d’équilibre traduit le fait que ces deux forces forment un couple de moment nulle
+        ce qui signifie que ces deux forces sont opposées et coaxiales.
+      </div>
+      
+      <div>
+        Dans le cas d’un solide soumis à trois forces non parallèles, deux d’entre elles ont
+        nécessairement leur prolongement qui se coupent en un point \(A\). Le système d’action est
+        alors équivalent à deux forces s’appliquant en \(A\). On se ramène au cas précédent où l’on
+        a vu que l’équilibre impliquait que les deux forces sont coaxiales. En d’autres termes les
+        trois forces sont concourantes en A.
+      </div>
+      
+      <div>
+        <u>Solide soumis à trois forces</u>
+        Lorsqu’un solide soumis à trois forces non parallèles est au repos, ces trois forces sont de
+        résultante nulle et concourantes en un même point.
+      </div>
+      
+      <h3>Solide en rotation autour d’un axe fixe</h3>
+      
+      <div>
+        Supposons un solide \(\mathcal{S}\) en rotation autour d’un axe fixe orienté \((\Delta)\) à
+        la vitesse angulaire \(\omega\) (\(\omega\gt 0\) si le solide tourne dans le sens positif).
+        Chaque point \(M𝑖_i\) de masse \(m_i\) constituant le solide décrit un cercle de rayon
+         \(H_iM_i= r_i\) où \(H_i\) est la projection de \(M_i\) sur l’axe \((\Delta)\). Leur
+        moment cinétique par rapport à l’axe vaut donc
+        $$
+          \quad L_{\Delta}(M_i) = m_iv_ir_i = m_ir_i^2\omega
+        $$
+      </div>
+      
+      <div>
+        Par conséquent, le solide \(\mathcal{S}\) possède un moment cinétique
+        $$
+          \quad L_{\Delta}(\mathcal{S}) = I_{\Delta}\omega
+        $$
+        avec
+        $$
+          \quad I_{\Delta} = \sum_{i} m_ir_i^2
+        $$
+        où \(I_{\Delta}\)désigne le moment d’inertie du solide par rapport à l’axe. Le moment
+        cinétique est donc proportionnel à la vitesse angulaire et au moment d’inertie qui dépend
+        non seulement de la masse totale mais aussi de sa répartition autour de l’axe de rotation.
+      </div>
+      
+      <div>
+        Ainsi, en vertu du théorème du moment cinétique, le mouvement de rotation d’un solide
+        autour d’un axe fixe est régi par l’équation&#x202f;:<br />
+        $$
+          \quad \boxed{I_{\Delta}\frac{\mathrm{d}\omega}{\mathrm{d}t}=\mathcal{M}_{\Delta}^{ext}}
+        $$
+      </div>
+
+    </section>
+  </body>
+</html>
